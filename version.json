@@ -1,0 +1,8 @@
+{
+  "version": "MY1.0.8",
+  "exeVersion": "1.0.8",
+  "updatedAt": "2026-11-16",
+  "notes": "支持 GitHub 一键检查更新；参考图自动吸附标准比例；本地保存与直连代理优化",
+  "htmlFile": "AI生图工作台.html",
+  "exeFile": "AI生图工作台.exe"
+}

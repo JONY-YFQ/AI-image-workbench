@@ -1,0 +1,2980 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI 生图工作台</title>
+  <link rel="icon" type="image/png" href="favicon.png" />
+  <style id="tailwind-offline-css">
+*,:after,:before{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgba(59,130,246,.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }::backdrop{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgba(59,130,246,.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }/*! tailwindcss v3.4.17 | MIT License | https://tailwindcss.com*/*,:after,:before{box-sizing:border-box;border:0 solid #e5e7eb}:after,:before{--tw-content:""}:host,html{line-height:1.5;-webkit-text-size-adjust:100%;-moz-tab-size:4;-o-tab-size:4;tab-size:4;font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif;font-feature-settings:normal;font-variation-settings:normal;-webkit-tap-highlight-color:transparent}body{margin:0;line-height:inherit}hr{height:0;color:inherit;border-top-width:1px}abbr:where([title]){-webkit-text-decoration:underline dotted;text-decoration:underline dotted}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}a{color:inherit;text-decoration:inherit}b,strong{font-weight:bolder}code,kbd,pre,samp{font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,Liberation Mono,Courier New,monospace;font-feature-settings:normal;font-variation-settings:normal;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit;border-collapse:collapse}button,input,optgroup,select,textarea{font-family:inherit;font-feature-settings:inherit;font-variation-settings:inherit;font-size:100%;font-weight:inherit;line-height:inherit;letter-spacing:inherit;color:inherit;margin:0;padding:0}button,select{text-transform:none}button,input:where([type=button]),input:where([type=reset]),input:where([type=submit]){-webkit-appearance:button;background-color:transparent;background-image:none}:-moz-focusring{outline:auto}:-moz-ui-invalid{box-shadow:none}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}blockquote,dd,dl,figure,h1,h2,h3,h4,h5,h6,hr,p,pre{margin:0}fieldset{margin:0}fieldset,legend{padding:0}menu,ol,ul{list-style:none;margin:0;padding:0}dialog{padding:0}textarea{resize:vertical}input::-moz-placeholder,textarea::-moz-placeholder{opacity:1;color:#9ca3af}input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}[role=button],button{cursor:pointer}:disabled{cursor:default}audio,canvas,embed,iframe,img,object,svg,video{display:block;vertical-align:middle}img,video{max-width:100%;height:auto}[hidden]:where(:not([hidden=until-found])){display:none}.container{width:100%}@media (min-width:640px){.container{max-width:640px}}@media (min-width:768px){.container{max-width:768px}}@media (min-width:1024px){.container{max-width:1024px}}@media (min-width:1280px){.container{max-width:1280px}}@media (min-width:1536px){.container{max-width:1536px}}.pointer-events-none{pointer-events:none}.pointer-events-auto{pointer-events:auto}.visible{visibility:visible}.fixed{position:fixed}.absolute{position:absolute}.relative{position:relative}.sticky{position:sticky}.inset-0{inset:0}.inset-y-0{top:0;bottom:0}.bottom-0{bottom:0}.bottom-6{bottom:1.5rem}.bottom-full{bottom:100%}.left-0{left:0}.left-1\.5{left:.375rem}.right-0{right:0}.right-1{right:.25rem}.right-1\.5{right:.375rem}.right-5{right:1.25rem}.right-6{right:1.5rem}.top-0{top:0}.top-1{top:.25rem}.top-1\.5{top:.375rem}.top-5{top:1.25rem}.z-10{z-index:10}.z-30{z-index:30}.z-40{z-index:40}.z-50{z-index:50}.mx-auto{margin-left:auto;margin-right:auto}.mb-0\.5{margin-bottom:.125rem}.mb-1{margin-bottom:.25rem}.mb-1\.5{margin-bottom:.375rem}.mb-2{margin-bottom:.5rem}.mb-2\.5{margin-bottom:.625rem}.mb-3{margin-bottom:.75rem}.mb-4{margin-bottom:1rem}.mt-0\.5{margin-top:.125rem}.mt-1{margin-top:.25rem}.mt-2{margin-top:.5rem}.mt-2\.5{margin-top:.625rem}.mt-4{margin-top:1rem}.block{display:block}.flex{display:flex}.grid{display:grid}.hidden{display:none}.aspect-square{aspect-ratio:1/1}.h-10{height:2.5rem}.h-11{height:2.75rem}.h-12{height:3rem}.h-14{height:3.5rem}.h-2{height:.5rem}.h-3{height:.75rem}.h-3\.5{height:.875rem}.h-4{height:1rem}.h-44{height:11rem}.h-5{height:1.25rem}.h-6{height:1.5rem}.h-7{height:1.75rem}.h-full{height:100%}.max-h-36{max-height:9rem}.max-h-60{max-height:15rem}.max-h-\[360px\]{max-height:360px}.max-h-\[92vh\]{max-height:92vh}.max-h-\[calc\(100vh-220px\)\]{max-height:calc(100vh - 220px)}.min-h-\[160px\]{min-height:160px}.min-h-\[480px\]{min-height:480px}.min-h-\[640px\]{min-height:640px}.min-h-screen{min-height:100vh}.w-10{width:2.5rem}.w-11{width:2.75rem}.w-12{width:3rem}.w-2{width:.5rem}.w-3{width:.75rem}.w-3\.5{width:.875rem}.w-4{width:1rem}.w-44{width:11rem}.w-5{width:1.25rem}.w-6{width:1.5rem}.w-7{width:1.75rem}.w-full{width:100%}.min-w-0{min-width:0}.max-w-\[120px\]{max-width:120px}.max-w-\[1440px\]{max-width:1440px}.max-w-full{max-width:100%}.max-w-lg{max-width:32rem}.max-w-sm{max-width:24rem}.max-w-xs{max-width:20rem}.flex-1{flex:1 1 0%}.shrink-0{flex-shrink:0}.translate-x-0{--tw-translate-x:0px}.translate-x-0,.translate-x-full{transform:translate(var(--tw-translate-x),var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.translate-x-full{--tw-translate-x:100%}.rotate-180{--tw-rotate:180deg}.rotate-180,.transform{transform:translate(var(--tw-translate-x),var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}@keyframes pulse{50%{opacity:.5}}.animate-pulse{animation:pulse 2s cubic-bezier(.4,0,.6,1) infinite}@keyframes spin{to{transform:rotate(1turn)}}.animate-spin{animation:spin 1s linear infinite}.cursor-grab{cursor:grab}.cursor-help{cursor:help}.cursor-pointer{cursor:pointer}.select-none{-webkit-user-select:none;-moz-user-select:none;user-select:none}.select-text{-webkit-user-select:text;-moz-user-select:text;user-select:text}.select-all{-webkit-user-select:all;-moz-user-select:all;user-select:all}.resize-y{resize:vertical}.resize{resize:both}.appearance-none{-webkit-appearance:none;-moz-appearance:none;appearance:none}.grid-cols-2{grid-template-columns:repeat(2,minmax(0,1fr))}.grid-cols-3{grid-template-columns:repeat(3,minmax(0,1fr))}.grid-cols-4{grid-template-columns:repeat(4,minmax(0,1fr))}.flex-col{flex-direction:column}.items-center{align-items:center}.justify-end{justify-content:flex-end}.justify-center{justify-content:center}.justify-between{justify-content:space-between}.gap-1{gap:.25rem}.gap-1\.5{gap:.375rem}.gap-2{gap:.5rem}.gap-2\.5{gap:.625rem}.gap-3{gap:.75rem}.gap-4{gap:1rem}.gap-8{gap:2rem}.space-y-2>:not([hidden])~:not([hidden]){--tw-space-y-reverse:0;margin-top:calc(.5rem*(1 - var(--tw-space-y-reverse)));margin-bottom:calc(.5rem*var(--tw-space-y-reverse))}.space-y-2\.5>:not([hidden])~:not([hidden]){--tw-space-y-reverse:0;margin-top:calc(.625rem*(1 - var(--tw-space-y-reverse)));margin-bottom:calc(.625rem*var(--tw-space-y-reverse))}.space-y-4>:not([hidden])~:not([hidden]){--tw-space-y-reverse:0;margin-top:calc(1rem*(1 - var(--tw-space-y-reverse)));margin-bottom:calc(1rem*var(--tw-space-y-reverse))}.space-y-5>:not([hidden])~:not([hidden]){--tw-space-y-reverse:0;margin-top:calc(1.25rem*(1 - var(--tw-space-y-reverse)));margin-bottom:calc(1.25rem*var(--tw-space-y-reverse))}.overflow-hidden{overflow:hidden}.overflow-x-auto{overflow-x:auto}.overflow-y-auto{overflow-y:auto}.truncate{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.whitespace-pre-wrap{white-space:pre-wrap}.break-words{overflow-wrap:break-word}.break-all{word-break:break-all}.rounded{border-radius:.25rem}.rounded-2xl{border-radius:1rem}.rounded-full{border-radius:9999px}.rounded-lg{border-radius:.5rem}.rounded-md{border-radius:.375rem}.rounded-xl{border-radius:.75rem}.border{border-width:1px}.border-2{border-width:2px}.border-b{border-bottom-width:1px}.border-l{border-left-width:1px}.border-t{border-top-width:1px}.border-dashed{border-style:dashed}.border-amber-200{--tw-border-opacity:1;border-color:rgb(253 230 138/var(--tw-border-opacity,1))}.border-black{--tw-border-opacity:1;border-color:rgb(0 0 0/var(--tw-border-opacity,1))}.border-emerald-200{--tw-border-opacity:1;border-color:rgb(167 243 208/var(--tw-border-opacity,1))}.border-neutral-100{--tw-border-opacity:1;border-color:rgb(245 245 245/var(--tw-border-opacity,1))}.border-neutral-200{--tw-border-opacity:1;border-color:rgb(229 229 229/var(--tw-border-opacity,1))}.border-neutral-200\/70{border-color:hsla(0,0%,90%,.7)}.border-neutral-200\/80{border-color:hsla(0,0%,90%,.8)}.border-neutral-300{--tw-border-opacity:1;border-color:rgb(212 212 212/var(--tw-border-opacity,1))}.border-neutral-300\/60{border-color:hsla(0,0%,83%,.6)}.border-rose-200{--tw-border-opacity:1;border-color:rgb(254 205 211/var(--tw-border-opacity,1))}.border-white\/20{border-color:hsla(0,0%,100%,.2)}.border-white\/90{border-color:hsla(0,0%,100%,.9)}.border-t-black{--tw-border-opacity:1;border-top-color:rgb(0 0 0/var(--tw-border-opacity,1))}.border-t-transparent{border-top-color:transparent}.border-t-white{--tw-border-opacity:1;border-top-color:rgb(255 255 255/var(--tw-border-opacity,1))}.bg-\[\#f8f9fa\]{--tw-bg-opacity:1;background-color:rgb(248 249 250/var(--tw-bg-opacity,1))}.bg-\[\#fbfcfd\]{--tw-bg-opacity:1;background-color:rgb(251 252 253/var(--tw-bg-opacity,1))}.bg-amber-50{--tw-bg-opacity:1;background-color:rgb(255 251 235/var(--tw-bg-opacity,1))}.bg-amber-500{--tw-bg-opacity:1;background-color:rgb(245 158 11/var(--tw-bg-opacity,1))}.bg-black{--tw-bg-opacity:1;background-color:rgb(0 0 0/var(--tw-bg-opacity,1))}.bg-black\/40{background-color:rgba(0,0,0,.4)}.bg-black\/45{background-color:rgba(0,0,0,.45)}.bg-black\/70{background-color:rgba(0,0,0,.7)}.bg-black\/95{background-color:rgba(0,0,0,.95)}.bg-emerald-50{--tw-bg-opacity:1;background-color:rgb(236 253 245/var(--tw-bg-opacity,1))}.bg-emerald-500{--tw-bg-opacity:1;background-color:rgb(16 185 129/var(--tw-bg-opacity,1))}.bg-neutral-100{--tw-bg-opacity:1;background-color:rgb(245 245 245/var(--tw-bg-opacity,1))}.bg-neutral-200{--tw-bg-opacity:1;background-color:rgb(229 229 229/var(--tw-bg-opacity,1))}.bg-neutral-300{--tw-bg-opacity:1;background-color:rgb(212 212 212/var(--tw-bg-opacity,1))}.bg-neutral-50{--tw-bg-opacity:1;background-color:rgb(250 250 250/var(--tw-bg-opacity,1))}.bg-neutral-50\/50{background-color:hsla(0,0%,98%,.5)}.bg-neutral-50\/70{background-color:hsla(0,0%,98%,.7)}.bg-neutral-900{--tw-bg-opacity:1;background-color:rgb(23 23 23/var(--tw-bg-opacity,1))}.bg-rose-50{--tw-bg-opacity:1;background-color:rgb(255 241 242/var(--tw-bg-opacity,1))}.bg-rose-500{--tw-bg-opacity:1;background-color:rgb(244 63 94/var(--tw-bg-opacity,1))}.bg-rose-600{--tw-bg-opacity:1;background-color:rgb(225 29 72/var(--tw-bg-opacity,1))}.bg-white{--tw-bg-opacity:1;background-color:rgb(255 255 255/var(--tw-bg-opacity,1))}.bg-white\/80{background-color:hsla(0,0%,100%,.8)}.bg-gradient-to-t{background-image:linear-gradient(to top,var(--tw-gradient-stops))}.from-black\/80{--tw-gradient-from:rgba(0,0,0,.8) var(--tw-gradient-from-position);--tw-gradient-to:transparent var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from),var(--tw-gradient-to)}.via-transparent{--tw-gradient-to:transparent var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from),transparent var(--tw-gradient-via-position),var(--tw-gradient-to)}.to-transparent{--tw-gradient-to:transparent var(--tw-gradient-to-position)}.object-contain{-o-object-fit:contain;object-fit:contain}.object-cover{-o-object-fit:cover;object-fit:cover}.p-0{padding:0}.p-1{padding:.25rem}.p-1\.5{padding:.375rem}.p-2{padding:.5rem}.p-2\.5{padding:.625rem}.p-3{padding:.75rem}.p-4{padding:1rem}.p-5{padding:1.25rem}.p-6{padding:1.5rem}.p-8{padding:2rem}.px-1{padding-left:.25rem;padding-right:.25rem}.px-1\.5{padding-left:.375rem;padding-right:.375rem}.px-2{padding-left:.5rem;padding-right:.5rem}.px-2\.5{padding-left:.625rem;padding-right:.625rem}.px-3{padding-left:.75rem;padding-right:.75rem}.px-3\.5{padding-left:.875rem;padding-right:.875rem}.px-4{padding-left:1rem;padding-right:1rem}.px-5{padding-left:1.25rem;padding-right:1.25rem}.py-0\.5{padding-top:.125rem;padding-bottom:.125rem}.py-1\.5{padding-top:.375rem;padding-bottom:.375rem}.py-2{padding-top:.5rem;padding-bottom:.5rem}.py-2\.5{padding-top:.625rem;padding-bottom:.625rem}.py-3{padding-top:.75rem;padding-bottom:.75rem}.py-4{padding-top:1rem;padding-bottom:1rem}.py-6{padding-top:1.5rem;padding-bottom:1.5rem}.pb-2{padding-bottom:.5rem}.pr-0\.5{padding-right:.125rem}.pr-10{padding-right:2.5rem}.pr-5{padding-right:1.25rem}.pr-7{padding-right:1.75rem}.pt-2{padding-top:.5rem}.text-center{text-align:center}.font-mono{font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,Liberation Mono,Courier New,monospace}.font-sans{font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif}.text-\[10px\]{font-size:10px}.text-\[11px\]{font-size:11px}.text-\[9px\]{font-size:9px}.text-base{font-size:1rem;line-height:1.5rem}.text-sm{font-size:.875rem;line-height:1.25rem}.text-xl{font-size:1.25rem;line-height:1.75rem}.text-xs{font-size:.75rem;line-height:1rem}.font-bold{font-weight:700}.font-medium{font-weight:500}.font-semibold{font-weight:600}.uppercase{text-transform:uppercase}.leading-relaxed{line-height:1.625}.tracking-tight{letter-spacing:-.025em}.tracking-wider{letter-spacing:.05em}.text-\[\#111827\]{--tw-text-opacity:1;color:rgb(17 24 39/var(--tw-text-opacity,1))}.text-amber-800{--tw-text-opacity:1;color:rgb(146 64 14/var(--tw-text-opacity,1))}.text-black{--tw-text-opacity:1;color:rgb(0 0 0/var(--tw-text-opacity,1))}.text-emerald-700{--tw-text-opacity:1;color:rgb(4 120 87/var(--tw-text-opacity,1))}.text-neutral-400{--tw-text-opacity:1;color:rgb(163 163 163/var(--tw-text-opacity,1))}.text-neutral-500{--tw-text-opacity:1;color:rgb(115 115 115/var(--tw-text-opacity,1))}.text-neutral-600{--tw-text-opacity:1;color:rgb(82 82 82/var(--tw-text-opacity,1))}.text-neutral-700{--tw-text-opacity:1;color:rgb(64 64 64/var(--tw-text-opacity,1))}.text-neutral-800{--tw-text-opacity:1;color:rgb(38 38 38/var(--tw-text-opacity,1))}.text-neutral-900{--tw-text-opacity:1;color:rgb(23 23 23/var(--tw-text-opacity,1))}.text-rose-400{--tw-text-opacity:1;color:rgb(251 113 133/var(--tw-text-opacity,1))}.text-rose-500{--tw-text-opacity:1;color:rgb(244 63 94/var(--tw-text-opacity,1))}.text-rose-600{--tw-text-opacity:1;color:rgb(225 29 72/var(--tw-text-opacity,1))}.text-rose-700{--tw-text-opacity:1;color:rgb(190 18 60/var(--tw-text-opacity,1))}.text-white{--tw-text-opacity:1;color:rgb(255 255 255/var(--tw-text-opacity,1))}.text-white\/70{color:hsla(0,0%,100%,.7)}.text-white\/80{color:hsla(0,0%,100%,.8)}.underline{text-decoration-line:underline}.antialiased{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}.opacity-0{opacity:0}.opacity-100{opacity:1}.opacity-25{opacity:.25}.opacity-40{opacity:.4}.opacity-75{opacity:.75}.shadow{--tw-shadow:0 1px 3px 0 rgba(0,0,0,.1),0 1px 2px -1px rgba(0,0,0,.1);--tw-shadow-colored:0 1px 3px 0 var(--tw-shadow-color),0 1px 2px -1px var(--tw-shadow-color)}.shadow,.shadow-2xl{box-shadow:var(--tw-ring-offset-shadow,0 0 #0000),var(--tw-ring-shadow,0 0 #0000),var(--tw-shadow)}.shadow-2xl{--tw-shadow:0 25px 50px -12px rgba(0,0,0,.25);--tw-shadow-colored:0 25px 50px -12px var(--tw-shadow-color)}.shadow-lg{--tw-shadow:0 10px 15px -3px rgba(0,0,0,.1),0 4px 6px -4px rgba(0,0,0,.1);--tw-shadow-colored:0 10px 15px -3px var(--tw-shadow-color),0 4px 6px -4px var(--tw-shadow-color)}.shadow-lg,.shadow-md{box-shadow:var(--tw-ring-offset-shadow,0 0 #0000),var(--tw-ring-shadow,0 0 #0000),var(--tw-shadow)}.shadow-md{--tw-shadow:0 4px 6px -1px rgba(0,0,0,.1),0 2px 4px -2px rgba(0,0,0,.1);--tw-shadow-colored:0 4px 6px -1px var(--tw-shadow-color),0 2px 4px -2px var(--tw-shadow-color)}.shadow-sm{--tw-shadow:0 1px 2px 0 rgba(0,0,0,.05);--tw-shadow-colored:0 1px 2px 0 var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow,0 0 #0000),var(--tw-ring-shadow,0 0 #0000),var(--tw-shadow)}.ring-2{--tw-ring-offset-shadow:var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);--tw-ring-shadow:var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color);box-shadow:var(--tw-ring-offset-shadow),var(--tw-ring-shadow),var(--tw-shadow,0 0 #0000)}.ring-black{--tw-ring-opacity:1;--tw-ring-color:rgb(0 0 0/var(--tw-ring-opacity,1))}.filter{filter:var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow)}.backdrop-blur-md{--tw-backdrop-blur:blur(12px)}.backdrop-blur-md,.backdrop-blur-sm{-webkit-backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia)}.backdrop-blur-sm{--tw-backdrop-blur:blur(4px)}.transition{transition-property:color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,-webkit-backdrop-filter;transition-property:color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;transition-property:color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter,-webkit-backdrop-filter;transition-timing-function:cubic-bezier(.4,0,.2,1);transition-duration:.15s}.transition-all{transition-property:all;transition-timing-function:cubic-bezier(.4,0,.2,1);transition-duration:.15s}.transition-opacity{transition-property:opacity;transition-timing-function:cubic-bezier(.4,0,.2,1);transition-duration:.15s}.transition-transform{transition-property:transform;transition-timing-function:cubic-bezier(.4,0,.2,1)}.duration-150,.transition-transform{transition-duration:.15s}.duration-200{transition-duration:.2s}.selection\:bg-neutral-900 ::-moz-selection{--tw-bg-opacity:1;background-color:rgb(23 23 23/var(--tw-bg-opacity,1))}.selection\:bg-neutral-900 ::selection{--tw-bg-opacity:1;background-color:rgb(23 23 23/var(--tw-bg-opacity,1))}.selection\:text-white ::-moz-selection{--tw-text-opacity:1;color:rgb(255 255 255/var(--tw-text-opacity,1))}.selection\:text-white ::selection{--tw-text-opacity:1;color:rgb(255 255 255/var(--tw-text-opacity,1))}.selection\:bg-neutral-900::-moz-selection{--tw-bg-opacity:1;background-color:rgb(23 23 23/var(--tw-bg-opacity,1))}.selection\:bg-neutral-900::selection{--tw-bg-opacity:1;background-color:rgb(23 23 23/var(--tw-bg-opacity,1))}.selection\:text-white::-moz-selection{--tw-text-opacity:1;color:rgb(255 255 255/var(--tw-text-opacity,1))}.selection\:text-white::selection{--tw-text-opacity:1;color:rgb(255 255 255/var(--tw-text-opacity,1))}.hover\:border-black:hover{--tw-border-opacity:1;border-color:rgb(0 0 0/var(--tw-border-opacity,1))}.hover\:border-neutral-400:hover{--tw-border-opacity:1;border-color:rgb(163 163 163/var(--tw-border-opacity,1))}.hover\:bg-black:hover{--tw-bg-opacity:1;background-color:rgb(0 0 0/var(--tw-bg-opacity,1))}.hover\:bg-neutral-200:hover{--tw-bg-opacity:1;background-color:rgb(229 229 229/var(--tw-bg-opacity,1))}.hover\:bg-neutral-50:hover{--tw-bg-opacity:1;background-color:rgb(250 250 250/var(--tw-bg-opacity,1))}.hover\:bg-neutral-800:hover{--tw-bg-opacity:1;background-color:rgb(38 38 38/var(--tw-bg-opacity,1))}.hover\:bg-rose-600:hover{--tw-bg-opacity:1;background-color:rgb(225 29 72/var(--tw-bg-opacity,1))}.hover\:bg-rose-700:hover{--tw-bg-opacity:1;background-color:rgb(190 18 60/var(--tw-bg-opacity,1))}.hover\:bg-white\/10:hover{background-color:hsla(0,0%,100%,.1)}.hover\:text-black:hover{--tw-text-opacity:1;color:rgb(0 0 0/var(--tw-text-opacity,1))}.hover\:text-neutral-700:hover{--tw-text-opacity:1;color:rgb(64 64 64/var(--tw-text-opacity,1))}.hover\:text-rose-700:hover{--tw-text-opacity:1;color:rgb(190 18 60/var(--tw-text-opacity,1))}.hover\:text-white:hover{--tw-text-opacity:1;color:rgb(255 255 255/var(--tw-text-opacity,1))}.hover\:shadow-sm:hover{--tw-shadow:0 1px 2px 0 rgba(0,0,0,.05);--tw-shadow-colored:0 1px 2px 0 var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow,0 0 #0000),var(--tw-ring-shadow,0 0 #0000),var(--tw-shadow)}.focus\:border-black:focus{--tw-border-opacity:1;border-color:rgb(0 0 0/var(--tw-border-opacity,1))}.focus\:outline-none:focus{outline:2px solid transparent;outline-offset:2px}.focus\:ring-1:focus{--tw-ring-offset-shadow:var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);--tw-ring-shadow:var(--tw-ring-inset) 0 0 0 calc(1px + var(--tw-ring-offset-width)) var(--tw-ring-color);box-shadow:var(--tw-ring-offset-shadow),var(--tw-ring-shadow),var(--tw-shadow,0 0 #0000)}.focus\:ring-black:focus{--tw-ring-opacity:1;--tw-ring-color:rgb(0 0 0/var(--tw-ring-opacity,1))}.active\:cursor-grabbing:active{cursor:grabbing}.active\:bg-neutral-900:active{--tw-bg-opacity:1;background-color:rgb(23 23 23/var(--tw-bg-opacity,1))}.disabled\:pointer-events-none:disabled{pointer-events:none}.disabled\:opacity-40:disabled{opacity:.4}.group:hover .group-hover\:scale-105{--tw-scale-x:1.05;--tw-scale-y:1.05;transform:translate(var(--tw-translate-x),var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.group:hover .group-hover\:opacity-100{opacity:1}@media (min-width:640px){.sm\:inline-flex{display:inline-flex}.sm\:grid-cols-4{grid-template-columns:repeat(4,minmax(0,1fr))}.sm\:flex-row{flex-direction:row}.sm\:items-end{align-items:flex-end}.sm\:gap-4{gap:1rem}.sm\:p-5{padding:1.25rem}.sm\:p-6{padding:1.5rem}.sm\:px-6{padding-left:1.5rem;padding-right:1.5rem}.sm\:text-2xl{font-size:1.5rem;line-height:2rem}.sm\:text-sm{font-size:.875rem;line-height:1.25rem}}@media (min-width:768px){.md\:grid-cols-6{grid-template-columns:repeat(6,minmax(0,1fr))}}@media (min-width:1024px){.lg\:max-h-none{max-height:none}.lg\:min-h-\[560px\]{min-height:560px}.lg\:w-\[360px\]{width:360px}.lg\:grid-cols-8{grid-template-columns:repeat(8,minmax(0,1fr))}.lg\:flex-row{flex-direction:row}.lg\:border-b-0{border-bottom-width:0}.lg\:border-r{border-right-width:1px}}@media (min-width:1280px){.xl\:w-\[380px\]{width:380px}}
+  </style>
+  <style>
+    /* Custom scrollbar */
+    ::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+    ::-webkit-scrollbar-track {
+      background: transparent;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #d1d5db;
+      border-radius: 9999px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #9ca3af;
+    }
+
+    /* Modal / Drawer animations */
+    .drawer-overlay {
+      transition: opacity 0.25s ease-in-out;
+    }
+    .drawer-content {
+      transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    #canvasContainer:has(#canvasImageWrapper:not(.hidden)) {
+      align-items: flex-start;
+      min-height: 0;
+      flex: 0 0 auto;
+      border: 0;
+      border-radius: 0;
+      background: transparent !important;
+      overflow: visible;
+    }
+    #canvasImageWrapper {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr);
+      grid-auto-rows: auto;
+      gap: 16px;
+      padding: 0;
+      height: auto;
+      min-height: 0;
+      align-content: start;
+      align-items: start;
+      background: transparent;
+      overflow: visible;
+    }
+    #canvasImageWrapper.hidden { display: none; }
+    .task-preview {
+      position: relative;
+      min-width: 0;
+      min-height: 0;
+      display: block;
+      overflow: hidden;
+      border: 1px solid #e5e7eb;
+      border-radius: 8px;
+      background: radial-gradient(circle at 50% 30%, #fff 0%, #fafbfc 70%, #f4f6f8 100%);
+    }
+    .task-preview-body { position: relative; width: 100%; min-width: 0; min-height: 0; display: grid; place-items: center; }
+    .task-preview-images { position: relative; width: 100%; display: grid; align-items: start; gap: 2px; }
+    .task-preview-images img { display: block; width: 100%; height: auto; min-width: 0; cursor: zoom-in; }
+    .task-preview-status { position: absolute; top: calc(50% + 26px); left: 50%; transform: translateX(-50%); white-space: nowrap; font-size: 11px; color: #6b7280; pointer-events: none; }
+    .task-preview-actions { position: absolute; top: 10px; right: 10px; display: flex; gap: 5px; opacity: 0; transition: opacity .15s; }
+    .task-preview:hover .task-preview-actions, .task-preview:focus-within .task-preview-actions { opacity: 1; }
+    .task-preview-actions button { width: 30px; height: 30px; display: grid; place-items: center; border-radius: 6px; color: white; background: #0009; }
+    .task-preview-actions button:hover { background: #000d; }
+    .task-preview-actions button[hidden] { display: none; }
+    .task-preview-actions svg { width: 15px; height: 15px; }
+    @media (hover: none) { .task-preview-actions { opacity: 1; } }
+
+    /* Tooltip */
+    .has-tooltip:hover .tooltip-content {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+
+<body class="bg-[#f8f9fa] text-[#111827] min-h-screen flex flex-col font-sans antialiased selection:bg-neutral-900 selection:text-white">
+
+  <!-- 顶部轻量级工具栏 -->
+  <header class="w-full bg-white border-b border-neutral-200/80 sticky top-0 z-30">
+    <div class="max-w-[1440px] mx-auto px-4 sm:px-6 h-14 flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <img src="favicon.png" alt="Logo" class="w-7 h-7 rounded-lg object-contain shadow-sm select-none" />
+        <span class="font-semibold text-base tracking-tight text-neutral-900">AI 图像工作台</span>
+        <span id="appVersionBadge" class="hidden sm:inline-flex items-center px-2 py-0.5 rounded text-[11px] font-mono font-medium bg-neutral-100 text-neutral-600 border border-neutral-200">
+          MY1.0.8
+        </span>
+      </div>
+
+      <div class="flex items-center gap-2">
+        <!-- 检查更新按钮 -->
+        <button id="checkUpdateBtn" type="button"
+          class="flex items-center gap-1.5 px-3 py-1.5 rounded-md text-xs font-semibold bg-white border border-neutral-300 hover:border-black text-neutral-700 hover:text-black transition shadow-sm">
+          <svg class="w-4 h-4 text-neutral-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path>
+          </svg>
+          <span>检查更新</span>
+        </button>
+
+        <!-- 设置按钮 -->
+        <button id="openSettingsBtn" type="button"
+          class="flex items-center gap-1.5 px-3 py-1.5 rounded-md text-xs font-semibold bg-white border border-neutral-300 hover:border-black text-neutral-800 hover:text-black transition shadow-sm">
+          <svg class="w-4 h-4 text-neutral-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z">
+            </path>
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+          </svg>
+          <span>设置</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- 主操作工作区 (左侧变窄 4:8 黄金分配) -->
+  <main class="max-w-[1440px] mx-auto w-full px-4 sm:px-6 py-6 flex-1 flex flex-col gap-8">
+
+    <!-- 上半部分：左右分栏卡片容器 (左侧紧凑，右侧大画幅开阔) -->
+    <div class="bg-white border border-neutral-200 rounded-lg shadow-sm overflow-hidden flex flex-col lg:flex-row min-h-[640px]">
+
+      <!-- 左侧操作区 (INPUT: 紧凑精致 360px，将最大画幅留给右侧) -->
+      <section class="w-full lg:w-[360px] xl:w-[380px] shrink-0 border-b lg:border-b-0 lg:border-r border-neutral-200 flex flex-col bg-white">
+        <!-- 头部 -->
+        <div class="h-12 px-5 border-b border-neutral-200 flex items-center justify-between">
+          <span class="text-sm font-bold tracking-wider text-black uppercase">输入</span>
+          <div id="modelChannelHint" class="text-xs text-neutral-400 font-medium">配置参数</div>
+        </div>
+
+        <!-- 表单区域 -->
+        <div class="p-4 sm:p-5 flex-1 flex flex-col gap-4 overflow-y-auto max-h-[calc(100vh-220px)] lg:max-h-none">
+          <!-- 1. 模型选择 (首项) -->
+          <div>
+            <div class="flex items-center justify-between mb-1.5">
+              <label for="modelSelect" class="text-xs font-semibold text-neutral-800">模型</label>
+              <button id="refreshModelsBtn" type="button" title="从网关重新拉取可用模型列表"
+                class="text-[11px] font-medium text-neutral-500 hover:text-black flex items-center gap-1 transition">
+                <svg id="refreshIcon" class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15">
+                  </path>
+                </svg>
+                <span>刷新模型</span>
+              </button>
+            </div>
+            <div class="relative">
+              <select id="modelSelect"
+                class="w-full bg-white border border-neutral-300 rounded px-2.5 py-2 text-xs sm:text-sm text-neutral-900 focus:outline-none focus:border-black focus:ring-1 focus:ring-black transition appearance-none cursor-pointer pr-7 font-mono truncate">
+                <option value="gpt-image-2" selected>gpt-image-2</option>
+                <option value="gpt-image-2.5-flare">gpt-image-2.5-flare</option>
+                <option value="gemini-2.5-flash-image-preview">gemini-2.5-flash-image-preview</option>
+                <option value="gemini-3-pro-image-preview">gemini-3-pro-image-preview</option>
+                <option value="gemini-3.1-flash-image-preview">gemini-3.1-flash-image-preview</option>
+                <option value="grok-imagine-image">grok-imagine-image</option>
+              </select>
+              <div class="absolute inset-y-0 right-0 flex items-center px-2 pointer-events-none text-neutral-500">
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                </svg>
+              </div>
+            </div>
+          </div>
+
+          <!-- 2. 提示词 (大画幅多行高度，舒展大气) -->
+          <div>
+            <div class="flex items-center justify-between mb-1.5">
+              <label for="promptInput" class="text-xs font-semibold text-neutral-800">提示词</label>
+              <button id="clearPromptBtn" type="button" class="text-[11px] text-neutral-400 hover:text-neutral-700">清空</button>
+            </div>
+            <textarea id="promptInput" rows="7" placeholder="详细描述你想要生成的画面内容、主体细节、艺术风格、色彩氛围..."
+              class="w-full bg-white border border-neutral-300 rounded px-3 py-2 text-xs sm:text-sm text-neutral-900 focus:outline-none focus:border-black focus:ring-1 focus:ring-black transition resize-y leading-relaxed min-h-[160px] h-44"></textarea>
+            <div class="flex items-center justify-between mt-1 text-[11px] text-neutral-400">
+              <span>最多 32,000 个字符。</span>
+              <span id="charCount">0 字符</span>
+            </div>
+          </div>
+
+          <!-- 3. 六个参数配置区：三列两行紧凑排布 -->
+          <div class="grid grid-cols-3 gap-2">
+            <!-- 1. 分辨率 -->
+            <div>
+              <label for="resolutionSelect" class="text-xs font-semibold text-neutral-800 block mb-1">分辨率</label>
+              <div class="relative">
+                <select id="resolutionSelect"
+                  class="w-full bg-white border border-neutral-300 rounded px-2 py-1.5 text-xs text-neutral-900 focus:outline-none focus:border-black focus:ring-1 focus:ring-black transition appearance-none cursor-pointer pr-5 truncate">
+                  <option value="1k" selected>1k</option>
+                  <option value="2k">2k</option>
+                  <option value="4k">4k</option>
+                </select>
+                <div class="absolute inset-y-0 right-0 flex items-center px-1.5 pointer-events-none text-neutral-500">
+                  <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                  </svg>
+                </div>
+              </div>
+            </div>
+
+            <!-- 2. 宽高比 -->
+            <div>
+              <div class="flex items-center gap-1 mb-1">
+                <label for="aspectRatioSelect" class="text-xs font-semibold text-neutral-800">尺寸</label>
+                <div class="relative has-tooltip cursor-help text-neutral-400 hover:text-neutral-700">
+                  <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                      d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                  </svg>
+                  <div class="tooltip-content absolute left-0 bottom-full mb-1.5 hidden w-44 p-2 bg-neutral-900 text-white text-[11px] rounded shadow-lg z-50 pointer-events-none">
+                    上传参考图后可选「随参考图」按首张参考图比例生成；也可自动识别提示词中的比例或手动指定尺寸。
+                  </div>
+                </div>
+              </div>
+              <div class="relative">
+                <select id="aspectRatioSelect"
+                  class="w-full bg-white border border-neutral-300 rounded px-2 py-1.5 text-xs text-neutral-900 focus:outline-none focus:border-black focus:ring-1 focus:ring-black transition appearance-none cursor-pointer pr-5 truncate">
+                  <option value="1:1" selected>1:1</option>
+                  <option value="16:9">16:9</option>
+                  <option value="9:16">9:16</option>
+                  <option value="4:3">4:3</option>
+                  <option value="3:4">3:4</option>
+                  <option value="21:9">21:9</option>
+                  <option value="3:2">3:2</option>
+                  <option value="2:3">2:3</option>
+                </select>
+                <div class="absolute inset-y-0 right-0 flex items-center px-1.5 pointer-events-none text-neutral-500">
+                  <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                  </svg>
+                </div>
+              </div>
+            </div>
+
+            <!-- 3. 输出格式 -->
+            <div>
+              <label for="outputFormatSelect" class="text-xs font-semibold text-neutral-800 block mb-1">格式</label>
+              <div class="relative">
+                <select id="outputFormatSelect"
+                  class="w-full bg-white border border-neutral-300 rounded px-2 py-1.5 text-xs text-neutral-900 focus:outline-none focus:border-black focus:ring-1 focus:ring-black transition appearance-none cursor-pointer pr-5 truncate">
+                  <option value="png" selected>png</option>
+                  <option value="jpeg">jpeg</option>
+                  <option value="webp">webp</option>
+                </select>
+                <div class="absolute inset-y-0 right-0 flex items-center px-1.5 pointer-events-none text-neutral-500">
+                  <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                  </svg>
+                </div>
+              </div>
+            </div>
+
+            <!-- 4. 背景 -->
+            <div>
+              <div class="flex items-center gap-1 mb-1">
+                <label for="backgroundSelect" class="text-xs font-semibold text-neutral-800">背景</label>
+                <div class="relative has-tooltip cursor-help text-neutral-400 hover:text-neutral-700">
+                  <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                      d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                  </svg>
+                  <div class="tooltip-content absolute left-0 bottom-full mb-1.5 hidden w-44 p-2 bg-neutral-900 text-white text-[11px] rounded shadow-lg z-50 pointer-events-none">
+                    auto 自动生成；transparent 为透明背景。
+                  </div>
+                </div>
+              </div>
+              <div class="relative">
+                <select id="backgroundSelect"
+                  class="w-full bg-white border border-neutral-300 rounded px-2 py-1.5 text-xs text-neutral-900 focus:outline-none focus:border-black focus:ring-1 focus:ring-black transition appearance-none cursor-pointer pr-5 truncate">
+                  <option value="auto" selected>auto</option>
+                  <option value="transparent">transparent</option>
+                </select>
+                <div class="absolute inset-y-0 right-0 flex items-center px-1.5 pointer-events-none text-neutral-500">
+                  <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                  </svg>
+                </div>
+              </div>
+            </div>
+
+            <!-- 5. 审核级别 -->
+            <div>
+              <label for="moderationSelect" class="text-xs font-semibold text-neutral-800 block mb-1">审核级别</label>
+              <div class="relative">
+                <select id="moderationSelect"
+                  class="w-full bg-white border border-neutral-300 rounded px-2 py-1.5 text-xs text-neutral-900 focus:outline-none focus:border-black focus:ring-1 focus:ring-black transition appearance-none cursor-pointer pr-5 truncate">
+                  <option value="low" selected>low</option>
+                  <option value="medium">medium</option>
+                  <option value="high">high</option>
+                </select>
+                <div class="absolute inset-y-0 right-0 flex items-center px-1.5 pointer-events-none text-neutral-500">
+                  <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                  </svg>
+                </div>
+              </div>
+            </div>
+
+            <!-- 6. 图像数量 -->
+            <div>
+              <label for="imageCountSelect" class="text-xs font-semibold text-neutral-800 block mb-1">数量</label>
+              <div class="relative">
+                <select id="imageCountSelect"
+                  class="w-full bg-white border border-neutral-300 rounded px-2 py-1.5 text-xs text-neutral-900 focus:outline-none focus:border-black focus:ring-1 focus:ring-black transition appearance-none cursor-pointer pr-5 truncate">
+                  <option value="1" selected>1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                </select>
+                <div class="absolute inset-y-0 right-0 flex items-center px-1.5 pointer-events-none text-neutral-500">
+                  <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 4. 参考图上传 (默认展开) -->
+          <div class="border border-neutral-200 rounded p-3 bg-neutral-50/50">
+            <div class="flex items-center justify-between cursor-pointer select-none" id="toggleRefImagesBtn">
+              <div class="flex items-center gap-1.5">
+                <span class="text-xs font-semibold text-neutral-800">参考图</span>
+                <span id="refImageCountBadge" class="text-[10px] bg-neutral-200 text-neutral-700 px-1.5 py-0.2 rounded font-medium">0</span>
+              </div>
+              <svg id="refImagesChevron" class="w-4 h-4 text-neutral-400 transition-transform duration-200 rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </div>
+
+            <div id="refImagesContainer" class="mt-2.5">
+              <!-- 上传托盘 -->
+              <div id="refDropArea"
+                class="border-2 border-dashed border-neutral-300 hover:border-black rounded py-2.5 px-3 text-center cursor-pointer transition bg-white">
+                <input id="refFileInput" type="file" multiple accept="image/*" class="hidden" />
+                <svg class="w-4 h-4 mx-auto text-neutral-400 mb-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"
+                    d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z">
+                  </path>
+                </svg>
+                <p class="text-xs text-neutral-600 font-medium">拖入图片/点击上传/Ctrl+V</p>
+              </div>
+
+              <!-- 参考图缩略图列表 -->
+              <div id="refImagesGrid" class="grid grid-cols-4 gap-1.5 mt-2"></div>
+            </div>
+          </div>
+
+          <!-- 底部操作按钮 (紧挨参考图下方) -->
+          <div class="pt-2">
+            <button id="generateBtn" type="button"
+              class="w-full bg-black hover:bg-neutral-800 active:bg-neutral-900 text-white font-medium py-3 px-4 rounded text-sm transition-all duration-150 flex items-center justify-center gap-2 shadow-sm">
+              <svg id="generateSpinner" class="w-4 h-4 animate-spin hidden" fill="none" viewBox="0 0 24 24">
+                <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                <path class="opacity-75" fill="currentColor"
+                  d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z">
+                </path>
+              </svg>
+              <span id="generateBtnText">开始生图</span>
+            </button>
+            <button id="stopBtn" type="button"
+              class="w-full mt-2 bg-neutral-100 hover:bg-neutral-200 text-neutral-700 font-medium py-2 px-4 rounded text-xs transition hidden">
+              停止全部
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- 右侧展示区 (输出 / OUTPUT: 自适应占满所有剩余空间，大画幅满幅呈现) -->
+      <section class="flex-1 min-w-0 flex flex-col bg-white">
+        <!-- 头部 (右侧显示用时状态，图三位置) -->
+        <div class="h-12 px-5 border-b border-neutral-200 flex items-center justify-between">
+          <span class="text-sm font-bold tracking-wider text-black">输出</span>
+          <div id="outputStatusBadge" class="text-xs font-mono font-medium flex items-center gap-1.5"><span class="text-neutral-400">准备就绪</span></div>
+        </div>
+
+        <!-- 画布主展示容器 (纯净无内阴影，极细微点矩阵流动感) -->
+        <div class="p-4 sm:p-6 flex-1 flex flex-col">
+          <div id="canvasContainer"
+            class="w-full flex-1 min-h-[480px] lg:min-h-[560px] rounded-lg border border-neutral-200/70 flex items-center justify-center relative overflow-hidden select-none bg-[#fbfcfd]"
+            style="background: radial-gradient(circle at 50% 30%, #ffffff 0%, #fafbfc 70%, #f4f6f8 100%);">
+
+            <!-- 动态流光极细微方块矩阵 Canvas -->
+            <canvas id="textureCanvas" class="absolute inset-0 w-full h-full pointer-events-none"></canvas>
+
+            <!-- 空白状态提示 (现代毛玻璃高质感浮岛) -->
+            <div id="canvasEmptyState" class="relative z-10 text-center p-6 bg-white/80 backdrop-blur-md border border-white/90 rounded-2xl shadow-sm max-w-xs transition-all">
+              <div class="w-11 h-11 rounded-xl bg-neutral-900 text-white flex items-center justify-center mx-auto mb-2.5 shadow">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6"
+                    d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z">
+                  </path>
+                </svg>
+              </div>
+              <p class="text-neutral-900 text-sm font-bold tracking-tight">AI 画布待命中</p>
+              <p class="text-neutral-500 text-xs mt-1">在左侧输入提示词，点击「开始生图」生成</p>
+            </div>
+
+            <!-- 加载状态动画 (无外框与背景，直接浮现于动态微点背景之上) -->
+            <div id="canvasLoadingState" class="relative z-10 hidden text-center p-4 max-w-xs pointer-events-none select-none">
+              <div class="relative w-12 h-12 mx-auto mb-3">
+                <div class="absolute inset-0 rounded-full border-2 border-neutral-300/60"></div>
+                <div class="absolute inset-0 rounded-full border-2 border-black border-t-transparent animate-spin"></div>
+              </div>
+              <p id="canvasLoadingText" class="text-neutral-900 text-sm font-bold tracking-tight">AI 正在极速渲染中...</p>
+              <p id="canvasLoadingTimer" class="text-neutral-600 text-xs mt-1 font-mono">耗时: 0s</p>
+            </div>
+
+            <!-- 图片渲染展示区 (直接在外框范围完整满幅显示，拒绝框里套框，纯黑底色让画面极致沉浸) -->
+            <div id="canvasImageWrapper" class="relative z-10 hidden w-full h-full p-0 flex items-center justify-center overflow-hidden bg-black">
+              <!-- 动态注入单图或多图 -->
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+    </div>
+
+    <!-- 下半部分：生成记录 (最多展示 2 行，超出自动分页) -->
+    <section class="mt-4">
+      <div class="mb-4 flex flex-col sm:flex-row sm:items-end justify-between gap-3">
+        <div>
+          <h2 class="text-xl sm:text-2xl font-bold tracking-tight text-neutral-900">生成记录</h2>
+          <p class="text-xs sm:text-sm text-neutral-500 mt-1">你刚提交的任务，生成完成后会显示在这里。</p>
+        </div>
+
+        <!-- 分页控制器 (超两行时显示) -->
+        <div id="tasksPagination" class="hidden flex items-center gap-2 text-xs">
+          <button id="prevPageBtn" type="button"
+            class="px-2.5 py-1.5 rounded border border-neutral-300 bg-white hover:border-black text-neutral-700 hover:text-black disabled:opacity-40 disabled:pointer-events-none transition">
+            上一页
+          </button>
+          <span id="pageIndicator" class="px-2 font-mono text-neutral-600 select-none">1 / 1</span>
+          <button id="nextPageBtn" type="button"
+            class="px-2.5 py-1.5 rounded border border-neutral-300 bg-white hover:border-black text-neutral-700 hover:text-black disabled:opacity-40 disabled:pointer-events-none transition">
+            下一页
+          </button>
+        </div>
+      </div>
+
+      <!-- 任务缩略图网格容器 (严格两行分页排布) -->
+      <div id="tasksGrid" class="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-8 gap-3 sm:gap-4">
+        <!-- 动态生成任务卡片 -->
+      </div>
+
+      <!-- 暂无任务空白态 -->
+      <div id="tasksEmptyHint" class="border border-dashed border-neutral-200 rounded-lg p-8 text-center text-xs text-neutral-400">
+        暂无提交的任务。每次点击「开始生图」生成的历史任务都会在此陈列。
+      </div>
+    </section>
+
+  </main>
+
+  <!-- 浮动返回顶部按钮 (截图 2 右下角) -->
+  <button id="scrollToTopBtn" type="button" title="返回顶部"
+    class="fixed bottom-6 right-6 w-10 h-10 rounded-full bg-white border border-neutral-300 hover:border-black text-neutral-700 hover:text-black shadow-md flex items-center justify-center transition-all opacity-0 pointer-events-none z-40">
+    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M5 10l7-7m0 0l7 7m-7-7v18"></path>
+    </svg>
+  </button>
+
+  <!-- 全屏图片查看 Lightbox Modal -->
+  <div id="lightboxModal" class="fixed inset-0 bg-black/95 z-50 hidden flex items-center justify-center p-4">
+    <button id="closeLightboxBtn" type="button"
+      class="absolute top-5 right-5 text-white/70 hover:text-white p-2 rounded-full hover:bg-white/10 transition">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+      </svg>
+    </button>
+    <img id="lightboxImg" src="" alt="全屏大图预览" class="max-w-full max-h-[92vh] object-contain select-none" />
+  </div>
+
+  <!-- 查看提示词详情弹窗 -->
+  <div id="promptDetailModal" class="fixed inset-0 bg-black/45 backdrop-blur-xs z-50 hidden flex items-center justify-center p-4">
+    <div class="bg-white rounded-xl border border-neutral-200 shadow-2xl w-full max-w-lg overflow-hidden">
+      <div class="px-5 py-4 border-b border-neutral-200 flex items-center justify-between">
+        <h3 class="text-sm font-bold text-neutral-900">提示词与生成信息</h3>
+        <button id="closePromptModalBtn" type="button" class="p-1 text-neutral-400 hover:text-black rounded transition">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+          </svg>
+        </button>
+      </div>
+      <div class="p-5 space-y-4 text-xs">
+        <div class="grid grid-cols-2 gap-3">
+          <div class="bg-neutral-50 border border-neutral-200/80 rounded-lg px-3 py-2">
+            <span class="text-[11px] text-neutral-400 block mb-0.5">所用模型</span>
+            <span id="modalModelText" class="font-mono font-semibold text-neutral-900 break-all">-</span>
+          </div>
+          <div class="bg-neutral-50 border border-neutral-200/80 rounded-lg px-3 py-2">
+            <span class="text-[11px] text-neutral-400 block mb-0.5">生图用时</span>
+            <span id="modalDurationText" class="font-mono font-semibold text-neutral-900">-</span>
+          </div>
+        </div>
+        <div>
+          <span class="text-[11px] font-semibold text-neutral-600 block mb-1.5">提示词内容</span>
+          <div id="modalPromptText"
+            class="bg-neutral-50 border border-neutral-200 rounded-lg p-3 text-neutral-800 leading-relaxed whitespace-pre-wrap break-words max-h-60 overflow-y-auto select-text"></div>
+        </div>
+      </div>
+      <div class="px-5 py-3 bg-neutral-50 border-t border-neutral-200 flex items-center justify-end gap-2">
+        <button id="copyModalPromptBtn" type="button"
+          class="px-3 py-1.5 rounded border border-neutral-300 bg-white hover:border-black text-xs font-medium text-neutral-800 transition">
+          复制提示词
+        </button>
+        <button id="okPromptModalBtn" type="button"
+          class="px-4 py-1.5 rounded bg-black hover:bg-neutral-800 text-xs font-medium text-white transition">
+          关闭
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 删除记录确认弹窗 -->
+  <div id="deleteConfirmModal" class="fixed inset-0 bg-black/45 backdrop-blur-xs z-50 hidden flex items-center justify-center p-4">
+    <div class="bg-white rounded-xl border border-neutral-200 shadow-2xl w-full max-w-sm overflow-hidden">
+      <div class="p-5">
+        <div class="w-10 h-10 rounded-full bg-rose-50 border border-rose-200 flex items-center justify-center text-rose-600 mb-3">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path>
+          </svg>
+        </div>
+        <h3 class="text-sm font-bold text-neutral-900 mb-1">确认删除生成记录？</h3>
+        <p class="text-xs text-neutral-500 leading-relaxed">仅删除页面展示中的这条记录，不会删除本地 <code class="px-1 py-0.5 bg-neutral-100 rounded text-neutral-700">outputs/</code> 文件夹中已保存的原图文件。</p>
+      </div>
+      <div class="px-5 py-3 bg-neutral-50 border-t border-neutral-200 flex items-center justify-end gap-2">
+        <button id="cancelDeleteBtn" type="button"
+          class="px-3.5 py-1.5 rounded border border-neutral-300 bg-white hover:border-black text-xs font-medium text-neutral-700 transition">
+          取消
+        </button>
+        <button id="confirmDeleteBtn" type="button"
+          class="px-3.5 py-1.5 rounded bg-rose-600 hover:bg-rose-700 text-xs font-medium text-white transition">
+          确认删除
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 设置侧边抽屉 (纯粹极简，取消多余预设与保存配置) -->
+  <div id="settingsDrawer" class="fixed inset-0 z-50 pointer-events-none">
+    <!-- 遮罩 -->
+    <div id="drawerOverlay" class="drawer-overlay absolute inset-0 bg-black/40 opacity-0 pointer-events-none"></div>
+
+    <!-- 抽屉面板 -->
+    <div id="drawerContent"
+      class="drawer-content absolute right-0 top-0 bottom-0 w-full max-w-lg bg-white shadow-2xl border-l border-neutral-200 flex flex-col justify-between transform translate-x-full pointer-events-auto">
+      
+      <!-- 抽屉头部 -->
+      <div class="p-6 border-b border-neutral-200 flex items-center justify-between shrink-0">
+        <div>
+          <h3 class="font-bold text-base text-neutral-900">接口与排错设置</h3>
+          <p class="text-xs text-neutral-500 mt-0.5">配置模型网关与查看生成排错日志</p>
+        </div>
+        <button id="closeSettingsBtn" type="button" class="p-1.5 text-neutral-400 hover:text-black rounded transition">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+          </svg>
+        </button>
+      </div>
+
+      <!-- 抽屉主体 (支持纵向滚动) -->
+      <div class="p-6 flex-1 overflow-y-auto space-y-5 text-xs">
+
+        <!-- API 密钥 (首项) -->
+        <div>
+          <label class="font-semibold text-neutral-800 block mb-1">API 密钥 (API Key)</label>
+          <div class="relative">
+            <input id="cfgApiKey" type="password" placeholder="填写 API Key，形如 my-xxxxxxxx"
+              class="w-full bg-white border border-neutral-300 rounded px-3 py-2 text-neutral-900 font-mono focus:outline-none focus:border-black pr-10" />
+            <button id="toggleApiKeyVisibility" type="button"
+              class="absolute inset-y-0 right-0 px-2.5 flex items-center text-neutral-400 hover:text-neutral-700">
+              <svg id="eyeIcon" class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z">
+                </path>
+              </svg>
+            </button>
+          </div>
+          <p class="text-[11px] text-neutral-400 mt-1">仅保存在当前浏览器本地，绝不泄露</p>
+        </div>
+
+        <!-- 连接检测状态提示 -->
+        <div id="connStatusBox" class="border border-neutral-200 rounded p-3 text-xs flex items-center justify-between bg-neutral-50">
+          <div class="flex items-center gap-2">
+            <span id="connStatusDot" class="w-2 h-2 rounded-full bg-neutral-300"></span>
+            <span id="connStatusText" class="text-neutral-600">尚未检测网关状态</span>
+          </div>
+          <div class="flex items-center gap-2.5">
+            <button id="testConnBtn" type="button" class="text-neutral-700 hover:text-black font-semibold underline text-[11px]">
+              测试连接
+            </button>
+          </div>
+        </div>
+
+        <!-- 生成日志与排错记录 (折叠展示，上限30条) -->
+        <div class="pt-2">
+          <div class="flex items-center justify-between pb-2 mb-2 border-b border-neutral-200">
+            <div class="flex items-center gap-2">
+              <span class="font-bold text-neutral-900">生成排错日志</span>
+              <span id="logCountBadge" class="text-[10px] bg-neutral-100 border border-neutral-200 px-1.5 py-0.2 rounded-full font-mono text-neutral-600">0 / 30</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <button id="exportLogsBtn" type="button" title="导出日志到本地文件"
+                class="text-[11px] text-neutral-600 hover:text-black flex items-center gap-1 transition">
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path>
+                </svg>
+                <span>导出</span>
+              </button>
+              <button id="clearLogsBtn" type="button" class="text-[11px] text-rose-500 hover:text-rose-700 transition">
+                清空
+              </button>
+            </div>
+          </div>
+
+          <!-- 日志折叠条容器 -->
+          <div id="logsListContainer" class="space-y-2 max-h-[360px] overflow-y-auto pr-0.5">
+            <!-- 动态生成单条折叠日志 -->
+          </div>
+
+          <!-- 暂无日志提示 -->
+          <div id="logsEmptyHint" class="text-center py-4 text-[11px] text-neutral-400 border border-dashed border-neutral-200 rounded">
+            暂无生成日志。每次点击「开始生图」的通信报文与错误记录都会显示在此。
+          </div>
+        </div>
+
+      </div>
+
+      <!-- 抽屉底部操作条 -->
+      <div class="p-4 border-t border-neutral-200 flex items-center gap-3 shrink-0 bg-white">
+        <button id="saveDrawerSettingsBtn" type="button"
+          class="flex-1 bg-black hover:bg-neutral-800 text-white font-medium py-2.5 rounded text-xs transition">
+          保存并关闭
+        </button>
+        <button id="resetSettingsBtn" type="button"
+          class="px-4 py-2.5 bg-neutral-100 hover:bg-neutral-200 text-neutral-700 font-medium rounded text-xs transition">
+          恢复默认
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+  <script>
+    /* ====================================================================
+     * AI 生图工作台 · 业务核心逻辑
+     * ==================================================================== */
+
+    const STORAGE_KEY_CONFIG = "apimart_ai_config_v1";
+    const STORAGE_KEY_USER_MODEL = "apimart_ai_user_model_v1";
+    const STORAGE_KEY_TASKS = "apimart_ai_tasks_v1";
+    const STORAGE_KEY_LOGS = "apimart_ai_logs_v1";
+    const STORAGE_KEY_HIDDEN_FILES = "apimart_ai_hidden_outputs_v1";
+    const LOCAL_SERVICE_BASE = /^https?:$/.test(location.protocol)
+      && ["127.0.0.1", "localhost", "[::1]"].includes(location.hostname)
+      ? location.origin : "http://127.0.0.1:8787";
+    const MAX_LOGS_COUNT = 30;
+
+    // 默认配置 (单一默认网关)
+    const DEFAULT_CONFIG = {
+      apiUrl: "https://api.model.selleraim.com/v1",
+      apiKey: "",
+      model: "gpt-image-2",
+      resolution: "1k",
+      aspectRatio: "1:1",
+      outputFormat: "png",
+      background: "auto",
+      moderation: "low",
+      imageCount: 1
+    };
+
+    let appConfig = { ...DEFAULT_CONFIG };
+    let taskHistory = [];
+    let generationLogs = [];
+    let currentActiveTask = null;
+    const runningTasks = new Map();
+    const previewTasks = new Map();
+    const previewCards = new Map();
+    const savingTasks = new Map();
+    let uploadedRefImages = []; // { file, dataUrl, name }
+    let draggedRefImage = null;
+    let fixedAspectRatio = DEFAULT_CONFIG.aspectRatio;
+    let detectedPromptRatio = null;
+    let promptRatioSignature = "";
+    let manualRatioOverride = false;
+    let gatewayKnownModels = [];
+    let isCanvasGenerating = false;
+    let currentHistoryPage = 1;
+    let pendingDeleteTaskId = null;
+
+    // DOM 元素引用
+    const el = {
+      modelSelect: document.getElementById("modelSelect"),
+      refreshModelsBtn: document.getElementById("refreshModelsBtn"),
+      refreshIcon: document.getElementById("refreshIcon"),
+      modelChannelHint: document.getElementById("modelChannelHint"),
+
+      promptInput: document.getElementById("promptInput"),
+      charCount: document.getElementById("charCount"),
+      clearPromptBtn: document.getElementById("clearPromptBtn"),
+
+      resolutionSelect: document.getElementById("resolutionSelect"),
+      aspectRatioSelect: document.getElementById("aspectRatioSelect"),
+      outputFormatSelect: document.getElementById("outputFormatSelect"),
+      backgroundSelect: document.getElementById("backgroundSelect"),
+      moderationSelect: document.getElementById("moderationSelect"),
+      imageCountSelect: document.getElementById("imageCountSelect"),
+
+      toggleRefImagesBtn: document.getElementById("toggleRefImagesBtn"),
+      refImagesContainer: document.getElementById("refImagesContainer"),
+      refImagesChevron: document.getElementById("refImagesChevron"),
+      refImageCountBadge: document.getElementById("refImageCountBadge"),
+      refDropArea: document.getElementById("refDropArea"),
+      refFileInput: document.getElementById("refFileInput"),
+      refImagesGrid: document.getElementById("refImagesGrid"),
+
+      generateBtn: document.getElementById("generateBtn"),
+      generateBtnText: document.getElementById("generateBtnText"),
+      generateSpinner: document.getElementById("generateSpinner"),
+      stopBtn: document.getElementById("stopBtn"),
+
+      canvasContainer: document.getElementById("canvasContainer"),
+      canvasEmptyState: document.getElementById("canvasEmptyState"),
+      canvasLoadingState: document.getElementById("canvasLoadingState"),
+      canvasLoadingText: document.getElementById("canvasLoadingText"),
+      canvasLoadingTimer: document.getElementById("canvasLoadingTimer"),
+      canvasImageWrapper: document.getElementById("canvasImageWrapper"),
+      outputStatusBadge: document.getElementById("outputStatusBadge"),
+
+
+      tasksGrid: document.getElementById("tasksGrid"),
+      tasksEmptyHint: document.getElementById("tasksEmptyHint"),
+      tasksPagination: document.getElementById("tasksPagination"),
+      prevPageBtn: document.getElementById("prevPageBtn"),
+      nextPageBtn: document.getElementById("nextPageBtn"),
+      pageIndicator: document.getElementById("pageIndicator"),
+      scrollToTopBtn: document.getElementById("scrollToTopBtn"),
+
+      lightboxModal: document.getElementById("lightboxModal"),
+      lightboxImg: document.getElementById("lightboxImg"),
+      closeLightboxBtn: document.getElementById("closeLightboxBtn"),
+
+      promptDetailModal: document.getElementById("promptDetailModal"),
+      closePromptModalBtn: document.getElementById("closePromptModalBtn"),
+      okPromptModalBtn: document.getElementById("okPromptModalBtn"),
+      copyModalPromptBtn: document.getElementById("copyModalPromptBtn"),
+      modalModelText: document.getElementById("modalModelText"),
+      modalDurationText: document.getElementById("modalDurationText"),
+      modalPromptText: document.getElementById("modalPromptText"),
+
+      deleteConfirmModal: document.getElementById("deleteConfirmModal"),
+      cancelDeleteBtn: document.getElementById("cancelDeleteBtn"),
+      confirmDeleteBtn: document.getElementById("confirmDeleteBtn"),
+
+      openSettingsBtn: document.getElementById("openSettingsBtn"),
+      closeSettingsBtn: document.getElementById("closeSettingsBtn"),
+      settingsDrawer: document.getElementById("settingsDrawer"),
+      drawerOverlay: document.getElementById("drawerOverlay"),
+      drawerContent: document.getElementById("drawerContent"),
+      cfgApiKey: document.getElementById("cfgApiKey"),
+      toggleApiKeyVisibility: document.getElementById("toggleApiKeyVisibility"),
+      eyeIcon: document.getElementById("eyeIcon"),
+      connStatusBox: document.getElementById("connStatusBox"),
+      connStatusDot: document.getElementById("connStatusDot"),
+      connStatusText: document.getElementById("connStatusText"),
+      testConnBtn: document.getElementById("testConnBtn"),
+      saveDrawerSettingsBtn: document.getElementById("saveDrawerSettingsBtn"),
+      resetSettingsBtn: document.getElementById("resetSettingsBtn"),
+
+      // 日志模块
+      logCountBadge: document.getElementById("logCountBadge"),
+      logsListContainer: document.getElementById("logsListContainer"),
+      logsEmptyHint: document.getElementById("logsEmptyHint"),
+      exportLogsBtn: document.getElementById("exportLogsBtn"),
+      clearLogsBtn: document.getElementById("clearLogsBtn")
+    };
+
+    /* --------------------------------------------------------------------
+     * 本地 outputs 目录直接无感静默存储 (通过本地微服务直存)
+     * -------------------------------------------------------------------- */
+    async function requestLocalService(route, { payload, timeout = 5000 } = {}) {
+      const endpoint = LOCAL_SERVICE_BASE + route;
+      const method = payload ? "POST" : "GET";
+      const body = payload ? JSON.stringify(payload) : null;
+      const failures = [];
+      const controller = new AbortController();
+      const timer = setTimeout(() => controller.abort(), timeout);
+      try {
+        const response = await fetch(endpoint, {
+          method, cache: "no-store", signal: controller.signal,
+          ...(body ? { headers: { "Content-Type": "text/plain;charset=UTF-8" }, body } : {})
+        });
+        return { ok: response.ok, status: response.status, data: await response.json().catch(() => ({})) };
+      } catch (error) {
+        failures.push("fetch：" + (error.message || error.name));
+      } finally {
+        clearTimeout(timer);
+      }
+      // 瞬时断连后用传统 XHR 重试，兼容不同浏览器的 fetch 实现。
+      // 重试沿用相同文件名，不重新提交生图任务。
+      await new Promise(resolve => setTimeout(resolve, 350));
+      try {
+        return await new Promise((resolve, reject) => {
+          const xhr = new XMLHttpRequest();
+          xhr.open(method, endpoint, true);
+          xhr.timeout = timeout;
+          if (body) xhr.setRequestHeader("Content-Type", "text/plain;charset=UTF-8");
+          xhr.onload = () => {
+            let data = {};
+            try { data = JSON.parse(xhr.responseText); } catch (_) {}
+            resolve({ ok: xhr.status >= 200 && xhr.status < 300, status: xhr.status, data });
+          };
+          xhr.onerror = () => reject(new Error("网络连接失败"));
+          xhr.ontimeout = () => reject(new Error("请求超时"));
+          xhr.onabort = () => reject(new Error("请求被中断"));
+          xhr.send(body);
+        });
+      } catch (error) {
+        failures.push("XHR：" + error.message);
+        throw new Error(failures.join("；"));
+      }
+    }
+
+    async function saveImageToLocalOutputs(filename, imgSrc) {
+      const isRemote = /^https?:\/\//i.test(imgSrc);
+      async function post(payload) {
+        let response;
+        try {
+          response = await requestLocalService("/api/save-image", { payload, timeout: 120000 });
+        } catch (error) {
+          let online = false;
+          try {
+            const health = await requestLocalService("/api/ping", { timeout: 3000 });
+            online = health.ok && health.data.status === "ok";
+          } catch (_) {}
+          const reason = online
+            ? "本地保存服务在线，但浏览器的保存请求未正常完成。"
+            : "本地保存服务当前不可达，请确认电脑右下角托盘中的工作台服务仍在运行，或重新打开 EXE 后重试。";
+          const page = location.protocol === "file:" ? "直接打开的 HTML，请通过 EXE 打开工作台" : location.origin;
+          throw new Error(reason + "\n页面：" + page + "\n" + error.message);
+        }
+        const result = response.data;
+        if (!response.ok || !result.success) {
+          const error = new Error(result.error || "保存失败：HTTP " + response.status);
+          error.serviceResponded = true;
+          throw error;
+        }
+        return result;
+      }
+      try {
+        return await post(isRemote ? { filename, url: imgSrc } : { filename, base64: imgSrc });
+      } catch (error) {
+        // 服务无法下载远程原图时，尝试由浏览器读取，再交给同一个固定目录保存。
+        if (!isRemote || !error.serviceResponded) throw error;
+        try {
+          const resp = await fetch(imgSrc, { signal: AbortSignal.timeout(60000) });
+          if (!resp.ok) throw new Error("读取原图失败：HTTP " + resp.status);
+          const base64 = await readFileAsDataUrl(await resp.blob());
+          return await post({ filename, base64 });
+        } catch (fallbackError) {
+          throw new Error(error.message + "；浏览器补存失败：" + fallbackError.message);
+        }
+      }
+    }
+
+    function saveTaskImages(task) {
+      if (savingTasks.has(task.id)) return savingTasks.get(task.id);
+      const operation = (async () => {
+        task.saveStatus = "saving";
+        task.saveError = "";
+        task.localFiles = task.localFiles || [];
+        task.outputFilenames = task.outputFilenames || task.images.map((_, i) =>
+          task.localFiles[i] || generateOutputFilename(task.model, i + 1, task.outputFormat, task.id));
+        renderTaskPreviews();
+        const errors = [];
+        for (let i = 0; i < task.images.length; i++) {
+          try {
+            const result = await saveImageToLocalOutputs(task.outputFilenames[i], task.images[i]);
+            task.localFiles[i] = result.filename;
+            if (result.filename) {
+              task.images[i] = `${LOCAL_SERVICE_BASE}/outputs/${encodeURIComponent(result.filename)}`;
+              const card = previewCards.get(task.id);
+              if (card) card.renderedStatus = null;
+            }
+          } catch (error) {
+            errors.push("第 " + (i + 1) + " 张：" + error.message);
+          }
+        }
+        task.saveStatus = errors.length ? "error" : "saved";
+        task.saveError = errors.join("\n");
+        persistTasks();
+        renderTaskPreviews();
+        if (errors.length) {
+          addLogRecord({
+            id: task.id + "_save_" + Date.now(), time: new Date().toLocaleTimeString(),
+            status: "error", model: task.model, summary: "图片已生成，但保存至 outputs 失败",
+            endpoint: LOCAL_SERVICE_BASE + "/api/save-image", method: "POST",
+            payload: { filenames: task.outputFilenames, pageOrigin: location.origin, serviceBase: LOCAL_SERVICE_BASE, browser: navigator.userAgent }, error: task.saveError
+          });
+          alert("图片已生成，但未全部保存到本项目 outputs 文件夹。\n" + task.saveError + "\n请点击图片上的保存图标重试。");
+        }
+        return !errors.length;
+      })();
+      savingTasks.set(task.id, operation);
+      operation.finally(() => savingTasks.delete(task.id));
+      return operation;
+    }
+
+    /* --------------------------------------------------------------------
+     * 日志管理模块 (上限 30 条，折叠，复制与导出)
+     * -------------------------------------------------------------------- */
+    function sanitizeLogValue(value, keyName = "") {
+      if (typeof value === "string") {
+        const isBase64DataUrl = /^data:[^;]+;base64,/i.test(value);
+        const isLargeRawB64 = (keyName === "b64_json" || keyName === "base64" || keyName === "data") && value.length > 512;
+        if (isBase64DataUrl || isLargeRawB64) {
+          const kb = Math.max(1, Math.round((value.length * 0.75) / 1024));
+          const approxText = kb >= 1024 ? (kb / 1024).toFixed(2) + " MB" : kb + " KB";
+          return `[已省略 Base64 图片数据 · 约 ${approxText}]`;
+        }
+        return value;
+      }
+      if (Array.isArray(value)) {
+        return value.map(item => sanitizeLogValue(item, keyName));
+      }
+      if (value && typeof value === "object") {
+        const out = {};
+        for (const [k, v] of Object.entries(value)) {
+          out[k] = sanitizeLogValue(v, k);
+        }
+        return out;
+      }
+      return value;
+    }
+
+    function sanitizeLogRecord(record) {
+      if (!record || typeof record !== "object") return record;
+      return {
+        ...record,
+        payload: sanitizeLogValue(record.payload),
+        response: sanitizeLogValue(record.response)
+      };
+    }
+
+    function loadSavedLogs() {
+      try {
+        const raw = localStorage.getItem(STORAGE_KEY_LOGS);
+        if (raw) {
+          const parsed = JSON.parse(raw);
+          generationLogs = Array.isArray(parsed) ? parsed.map(sanitizeLogRecord) : [];
+        }
+      } catch (e) {
+        console.warn("读取日志失败:", e);
+      }
+      renderLogsUI();
+    }
+
+    function addLogRecord(record) {
+      generationLogs.unshift(sanitizeLogRecord(record));
+      if (generationLogs.length > MAX_LOGS_COUNT) {
+        generationLogs = generationLogs.slice(0, MAX_LOGS_COUNT);
+      }
+      try {
+        localStorage.setItem(STORAGE_KEY_LOGS, JSON.stringify(generationLogs));
+      } catch (e) {
+        console.warn("存储日志失败:", e);
+      }
+      renderLogsUI();
+    }
+
+    function renderLogsUI() {
+      const total = generationLogs.length;
+      el.logCountBadge.textContent = `${total} / ${MAX_LOGS_COUNT}`;
+
+      if (total === 0) {
+        el.logsEmptyHint.classList.remove("hidden");
+        el.logsListContainer.innerHTML = "";
+        return;
+      }
+
+      el.logsEmptyHint.classList.add("hidden");
+      el.logsListContainer.innerHTML = "";
+
+      generationLogs.forEach((item) => {
+        const card = document.createElement("div");
+        card.className = "border border-neutral-200 rounded-md overflow-hidden bg-white text-xs";
+
+        const isSuccess = item.status === "success";
+        const badgeColor = isSuccess ? "bg-emerald-50 text-emerald-700 border-emerald-200" : "bg-rose-50 text-rose-700 border-rose-200";
+        const badgeText = isSuccess ? "成功" : "失败";
+
+        // 折叠栏头部
+        const header = document.createElement("div");
+        header.className = "p-2.5 flex items-center justify-between cursor-pointer hover:bg-neutral-50 select-none transition gap-2";
+        header.innerHTML = `
+          <div class="flex items-center gap-2 min-w-0 flex-1">
+            <span class="px-1.5 py-0.5 rounded text-[10px] font-bold border shrink-0 ${badgeColor}">${badgeText}</span>
+            <span class="text-neutral-500 font-mono text-[11px] shrink-0">${item.time || ""}</span>
+            <span class="font-mono font-medium text-neutral-800 truncate shrink-0 max-w-[120px]">${escapeHtml(item.model || "")}</span>
+            <span class="text-neutral-400 truncate text-[11px]">${escapeHtml(item.summary || "")}</span>
+          </div>
+          <div class="flex items-center gap-1.5 shrink-0">
+            <button type="button" class="log-copy-btn p-1 text-neutral-400 hover:text-black rounded hover:bg-neutral-200 transition" title="复制完整日志">
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10a2 2 0 00-2 2v6a2 2 0 002 2h8a2 2 0 002-2v-6a2 2 0 00-2-2z"></path>
+              </svg>
+            </button>
+            <span class="log-chevron text-neutral-400 transition-transform">
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </span>
+          </div>
+        `;
+
+        // 展开的详情主体
+        const body = document.createElement("div");
+        body.className = "p-3 bg-neutral-50/70 border-t border-neutral-100 hidden space-y-2.5 font-mono text-[11px]";
+
+        let tipHtml = "";
+        if (item.error && /no available channels for model/i.test(item.error)) {
+          tipHtml = `
+            <div class="p-2 rounded bg-amber-50 border border-amber-200 text-amber-800 text-[11px] leading-relaxed">
+              <strong>💡 排错提示：</strong>当前网关上游暂未开放该模型渠道。请切换为 <code>gpt-image-2</code> 或点击「刷新模型」查看支持的模型。
+            </div>
+          `;
+        } else if (item.error && /not enabled for your team/i.test(item.error)) {
+          tipHtml = `
+            <div class="p-2 rounded bg-amber-50 border border-amber-200 text-amber-800 text-[11px] leading-relaxed">
+              <strong>💡 排错提示：</strong>该模型尚未在当前团队/API Key的控制台中开启权限。请在团队控制台开通，或改用 <code>gpt-image-2</code>。
+            </div>
+          `;
+        } else if (item.error && /does not support this endpoint/i.test(item.error)) {
+          tipHtml = `
+            <div class="p-2 rounded bg-amber-50 border border-amber-200 text-amber-800 text-[11px] leading-relaxed">
+              <strong>💡 排错提示：</strong>该模型是对话/LLM文本模型（非独立生图接口），不支持调用 <code>/v1/images/generations</code>。请选择生图模型（如 <code>gpt-image-2</code> 等）。
+            </div>
+          `;
+        }
+
+        const cleanItem = sanitizeLogRecord(item);
+        body.innerHTML = `
+          ${tipHtml}
+          <div>
+            <span class="text-neutral-500 font-bold block mb-1">请求接口与耗时：</span>
+            <div class="bg-white p-2 rounded border border-neutral-200 text-neutral-800 select-all">${cleanItem.method || "POST"} ${escapeHtml(cleanItem.endpoint || "")} · 耗时 ${cleanItem.duration || "0ms"}</div>
+          </div>
+          <div>
+            <span class="text-neutral-500 font-bold block mb-1">请求参数 (Payload)：</span>
+            <pre class="bg-white p-2 rounded border border-neutral-200 overflow-x-auto text-neutral-700 select-all max-h-36">${escapeHtml(JSON.stringify(cleanItem.payload, null, 2))}</pre>
+          </div>
+          <div>
+            <span class="text-neutral-500 font-bold block mb-1">响应报文 (Response)：</span>
+            <pre class="bg-white p-2 rounded border border-neutral-200 overflow-x-auto text-neutral-700 select-all max-h-36">${escapeHtml(cleanItem.response ? JSON.stringify(cleanItem.response, null, 2) : cleanItem.error || "(无内容)")}</pre>
+          </div>
+        `;
+
+        // 点击折叠与展开
+        header.addEventListener("click", (e) => {
+          if (e.target.closest(".log-copy-btn")) return;
+          const isHidden = body.classList.contains("hidden");
+          body.classList.toggle("hidden", !isHidden);
+          header.querySelector(".log-chevron").classList.toggle("rotate-180", isHidden);
+        });
+
+        // 复制按钮
+        const copyBtn = header.querySelector(".log-copy-btn");
+        copyBtn.addEventListener("click", (e) => {
+          e.stopPropagation();
+          copyLogItem(item);
+        });
+
+        card.appendChild(header);
+        card.appendChild(body);
+        el.logsListContainer.appendChild(card);
+      });
+    }
+
+    function copyLogItem(item) {
+      const cleanItem = sanitizeLogRecord(item);
+      const text = `
+=== AI生图排错日志 ===
+时间: ${cleanItem.time}
+状态: ${cleanItem.status === "success" ? "成功" : "失败"}
+耗时: ${cleanItem.duration || "0ms"}
+模型: ${cleanItem.model}
+接口: ${cleanItem.method || "POST"} ${cleanItem.endpoint}
+
+[响应结果 / 错误信息]
+${cleanItem.response ? JSON.stringify(cleanItem.response, null, 2) : cleanItem.error}
+
+[请求 Payload]
+${JSON.stringify(cleanItem.payload, null, 2)}
+=======================
+      `.trim();
+
+      navigator.clipboard.writeText(text).then(() => {
+        alert("✅ 该条日志已成功复制到剪贴板！");
+      }).catch(() => {
+        prompt("请复制日志内容：", text);
+      });
+    }
+
+    function exportAllLogs() {
+      if (!generationLogs.length) {
+        alert("暂无日志可导出！");
+        return;
+      }
+      const jsonStr = JSON.stringify(generationLogs.map(sanitizeLogRecord), null, 2);
+      const blob = new Blob([jsonStr], { type: "application/json" });
+      const now = new Date();
+      const dateStr = `${now.getFullYear()}${String(now.getMonth()+1).padStart(2,'0')}${String(now.getDate()).padStart(2,'0')}_${String(now.getHours()).padStart(2,'0')}${String(now.getMinutes()).padStart(2,'0')}`;
+      triggerBrowserDownload(blob, `generation_logs_${dateStr}.json`);
+    }
+
+    function clearAllLogs() {
+      if (!generationLogs.length) return;
+      if (confirm("确定要清空这 30 条日志记录吗？")) {
+        generationLogs = [];
+        localStorage.removeItem(STORAGE_KEY_LOGS);
+        renderLogsUI();
+      }
+    }
+
+    /* --------------------------------------------------------------------
+     * 配置读写与初始化
+     * -------------------------------------------------------------------- */
+    function loadSavedConfig() {
+      try {
+        const raw = localStorage.getItem(STORAGE_KEY_CONFIG);
+        if (raw) {
+          const parsed = JSON.parse(raw);
+          appConfig = { ...DEFAULT_CONFIG, ...parsed };
+        } else {
+          const legacyKey = localStorage.getItem("ai_img_api_key") || "";
+          if (legacyKey) appConfig.apiKey = legacyKey;
+        }
+        // 默认选中 gpt-image-2；若用户曾主动切换过别的模型，则优先保持用户所选
+        const userChosenModel = localStorage.getItem(STORAGE_KEY_USER_MODEL);
+        appConfig.model = userChosenModel || DEFAULT_CONFIG.model;
+      } catch (e) {
+        console.error("读取配置失败:", e);
+      }
+      applyConfigToUI();
+    }
+
+    function saveConfig() {
+      appConfig.apiUrl = DEFAULT_CONFIG.apiUrl;
+      appConfig.apiKey = el.cfgApiKey.value.trim();
+      appConfig.model = getSelectedModel();
+      appConfig.resolution = el.resolutionSelect.value;
+      appConfig.aspectRatio = useRefAspectRatio ? fixedAspectRatio : getEffectiveAspectRatio();
+      appConfig.outputFormat = el.outputFormatSelect.value;
+      appConfig.background = el.backgroundSelect.value;
+      appConfig.moderation = el.moderationSelect.value;
+      appConfig.imageCount = parseInt(el.imageCountSelect.value, 10) || 1;
+
+      try {
+        localStorage.setItem(STORAGE_KEY_CONFIG, JSON.stringify(appConfig));
+      } catch (e) {
+        console.error("存储配置失败:", e);
+      }
+      persistConfigToLocalServer(appConfig);
+    }
+
+    async function persistConfigToLocalServer(cfg) {
+      try {
+        await fetch(`${LOCAL_SERVICE_BASE}/api/config`, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(cfg || appConfig)
+        });
+      } catch (e) {}
+    }
+
+    async function syncConfigFromLocalServer() {
+      try {
+        const res = await fetch(`${LOCAL_SERVICE_BASE}/api/config`, { cache: "no-store" });
+        if (!res.ok) return;
+        const serverCfg = await res.json().catch(() => null);
+        if (!serverCfg || typeof serverCfg !== "object") return;
+
+        if (!appConfig.apiKey && typeof serverCfg.apiKey === "string" && serverCfg.apiKey.trim()) {
+          appConfig.apiKey = serverCfg.apiKey.trim();
+          if (!localStorage.getItem(STORAGE_KEY_USER_MODEL) && serverCfg.model) {
+            appConfig.model = serverCfg.model;
+          }
+          try {
+            localStorage.setItem(STORAGE_KEY_CONFIG, JSON.stringify(appConfig));
+          } catch (e) {}
+          applyConfigToUI();
+        } else if (appConfig.apiKey && (!serverCfg.apiKey || serverCfg.apiKey !== appConfig.apiKey)) {
+          persistConfigToLocalServer(appConfig);
+        }
+      } catch (e) {}
+    }
+
+    function applyConfigToUI() {
+      el.cfgApiKey.value = appConfig.apiKey;
+
+      // 模型单选回填：保持用户主动选择的模型，未选择过时默认 gpt-image-2
+      const allowedRegex = /^(gpt-|gemini-.*(image|pro-preview)|grok-imagine)/i;
+      let targetModel = appConfig.model || DEFAULT_CONFIG.model;
+      if (!allowedRegex.test(targetModel)) {
+        targetModel = DEFAULT_CONFIG.model;
+      }
+      const hasOption = [...el.modelSelect.options].some(opt => opt.value === targetModel);
+      if (!hasOption && targetModel) {
+        const opt = document.createElement("option");
+        opt.value = targetModel;
+        opt.textContent = targetModel;
+        el.modelSelect.appendChild(opt);
+      }
+      el.modelSelect.value = targetModel;
+
+      el.resolutionSelect.value = appConfig.resolution || "1k";
+      fixedAspectRatio = appConfig.aspectRatio || DEFAULT_CONFIG.aspectRatio;
+      manualRatioOverride = false;
+      promptRatioSignature = "";
+      syncPromptAspectRatio();
+      el.outputFormatSelect.value = appConfig.outputFormat || "png";
+      el.backgroundSelect.value = appConfig.background || "auto";
+      el.moderationSelect.value = appConfig.moderation || "low";
+      el.imageCountSelect.value = String(appConfig.imageCount || 1);
+    }
+
+    const PROMPT_RATIO_OPTION = "__prompt_ratio__";
+    const REF_RATIO_OPTION = "__ref_ratio__";
+    const KNOWN_ASPECT_RATIOS = ["1:1", "16:9", "9:16", "4:3", "3:4", "21:9", "3:2", "2:3"];
+    let useRefAspectRatio = false;
+
+    function readImageDimensions(dataUrl) {
+      return new Promise(resolve => {
+        const img = new Image();
+        img.onload = () => resolve({ width: img.naturalWidth || 0, height: img.naturalHeight || 0 });
+        img.onerror = () => resolve({ width: 0, height: 0 });
+        img.src = dataUrl;
+      });
+    }
+
+    function detectImageAspectRatio(width, height) {
+      if (!width || !height) return null;
+      const ratio = width / height;
+      if (ratio <= 0 || !Number.isFinite(ratio)) return null;
+      // 始终自动吸附到最接近的标准比例，避免产生模型不支持的冷门比例（如 45:91）
+      let bestKnown = KNOWN_ASPECT_RATIOS[0];
+      let bestDist = Infinity;
+      for (const known of KNOWN_ASPECT_RATIOS) {
+        const [kw, kh] = known.split(":").map(Number);
+        const kRatio = kw / kh;
+        const dist = Math.abs(Math.log(ratio / kRatio));
+        if (dist < bestDist) {
+          bestDist = dist;
+          bestKnown = known;
+        }
+      }
+      return bestKnown;
+    }
+
+    function getPrimaryRefAspectRatio() {
+      const first = uploadedRefImages[0];
+      if (!first) return null;
+      return first.aspectRatio || detectImageAspectRatio(first.width, first.height) || "1:1";
+    }
+
+    function findPromptRatios(prompt) {
+      const pattern = /(?:(?:宽高比|长宽比|画幅比例|画面比例|图片比例|图像比例|尺寸比例|画面尺寸|图片尺寸|图像尺寸|尺寸|比例|aspect\s*ratio|image\s*ratio)\s*(?:设置为|设为|为|是|[:：=])?\s*)?(?<![\d.])(\d{1,4})\s*[:：/∶比]\s*(\d{1,4})(?![\d.])(?:\s*(?:的)?(?:宽高比|长宽比|画幅比例|画面比例|比例))?/gi;
+      const matches = [];
+      for (const match of prompt.matchAll(pattern)) {
+        const width = Number(match[1]), height = Number(match[2]);
+        if (!width || !height || width / height > 10 || width / height < 0.1) continue;
+        // 时间和带多个冒号的时间戳不当作画面比例。
+        const before = prompt.slice(0, match.index);
+        const after = prompt.slice(match.index + match[0].length);
+        if (/(?:时间|时刻|凌晨|上午|下午|晚上|中午|早上|傍晚)\s*$/.test(before) || /\d\s*[:：]\s*$/.test(before) || /^\s*[:：]\s*\d/.test(after)) continue;
+        const known = KNOWN_ASPECT_RATIOS.find(ratio => {
+          const [w, h] = ratio.split(":").map(Number);
+          return w * height === h * width;
+        });
+        const gcd = (a, b) => b ? gcd(b, a % b) : a;
+        const divisor = gcd(width, height);
+        matches.push({ start: match.index, end: match.index + match[0].length,
+          ratio: known || (width / divisor + ":" + height / divisor) });
+      }
+      return matches;
+    }
+
+    function syncPromptAspectRatio() {
+      const matches = findPromptRatios(el.promptInput.value);
+      const signature = matches.map(match => match.ratio).join("|");
+      if (signature !== promptRatioSignature) {
+        manualRatioOverride = false;
+        if (matches.length > 0) useRefAspectRatio = false;
+      }
+      promptRatioSignature = signature;
+      detectedPromptRatio = matches.at(-1)?.ratio || null;
+
+      const hasRefImages = uploadedRefImages.length > 0;
+      const refRatio = hasRefImages ? getPrimaryRefAspectRatio() : null;
+      if (!hasRefImages) useRefAspectRatio = false;
+
+      let refOption = [...el.aspectRatioSelect.options].find(option => option.value === REF_RATIO_OPTION);
+      if (hasRefImages && !refOption) {
+        refOption = document.createElement("option");
+        refOption.value = REF_RATIO_OPTION;
+        el.aspectRatioSelect.insertBefore(refOption, el.aspectRatioSelect.firstChild);
+      }
+      if (refOption) {
+        refOption.textContent = refRatio ? `随参考图 (${refRatio})` : "随参考图";
+        refOption.hidden = !hasRefImages;
+        refOption.disabled = !hasRefImages;
+      }
+
+      let autoOption = [...el.aspectRatioSelect.options].find(option => option.value === PROMPT_RATIO_OPTION);
+      if (detectedPromptRatio && !autoOption) {
+        autoOption = document.createElement("option");
+        autoOption.value = PROMPT_RATIO_OPTION;
+        autoOption.textContent = "识别比例";
+        el.aspectRatioSelect.appendChild(autoOption);
+      }
+      if (autoOption) {
+        autoOption.hidden = !detectedPromptRatio;
+        autoOption.disabled = !detectedPromptRatio;
+      }
+
+      if (useRefAspectRatio && hasRefImages && refRatio) {
+        el.aspectRatioSelect.value = REF_RATIO_OPTION;
+        const first = uploadedRefImages[0];
+        el.aspectRatioSelect.title = first && first.width && first.height
+          ? `按参考图比例：${refRatio} (${first.width}×${first.height})`
+          : `按参考图比例：${refRatio}`;
+      } else if (detectedPromptRatio && !manualRatioOverride) {
+        el.aspectRatioSelect.value = PROMPT_RATIO_OPTION;
+        el.aspectRatioSelect.title = "识别比例：" + detectedPromptRatio;
+      } else {
+        if (![...el.aspectRatioSelect.options].some(option => option.value === fixedAspectRatio)) {
+          const option = document.createElement("option");
+          option.value = fixedAspectRatio;
+          option.textContent = fixedAspectRatio;
+          el.aspectRatioSelect.appendChild(option);
+        }
+        el.aspectRatioSelect.value = fixedAspectRatio;
+        el.aspectRatioSelect.title = "";
+      }
+    }
+
+    function getEffectiveAspectRatio() {
+      if (useRefAspectRatio && uploadedRefImages.length > 0) {
+        return getPrimaryRefAspectRatio() || fixedAspectRatio;
+      }
+      return detectedPromptRatio && !manualRatioOverride ? detectedPromptRatio : fixedAspectRatio;
+    }
+
+    function stripPromptRatios(prompt) {
+      const matches = findPromptRatios(prompt);
+      let cleaned = prompt;
+      for (const match of matches.reverse()) cleaned = cleaned.slice(0, match.start) + cleaned.slice(match.end);
+      return cleaned.replace(/[,，;；]\s*([,，;；])/g, "$1")
+        .replace(/^[\s,，;；]+|[\s,，;；]+$/g, "").replace(/[ \t]{2,}/g, " ").trim();
+    }
+
+    function getSelectedModel() {
+      return el.modelSelect.value || DEFAULT_CONFIG.model;
+    }
+
+    /* --------------------------------------------------------------------
+     * Seller Aim 网关模型拉取与连接验证（优先走本地服务直连代理，绕过 VPN/代理干扰）
+     * -------------------------------------------------------------------- */
+    async function gatewayFetch(targetUrl, options = {}) {
+      if (/^https?:\/\//i.test(targetUrl) && LOCAL_SERVICE_BASE) {
+        try {
+          const proxyRes = await fetch(`${LOCAL_SERVICE_BASE}/api/proxy?url=${encodeURIComponent(targetUrl)}`, options);
+          if (proxyRes.headers.get("X-Workbench-Proxy-Error") !== "1") {
+            return proxyRes;
+          }
+        } catch (err) {
+          if (err && err.name === "AbortError") throw err;
+        }
+      }
+      return fetch(targetUrl, options);
+    }
+
+    async function testGatewayConnection() {
+      const apiUrl = (appConfig.apiUrl || DEFAULT_CONFIG.apiUrl).replace(/\/+$/, "");
+      const apiKey = el.cfgApiKey.value.trim();
+
+      if (!apiKey) {
+        setConnStatus("error", "请先填写 API 密钥");
+        return false;
+      }
+
+      saveConfig();
+      setConnStatus("connecting", "正在验证网关连接...");
+      try {
+        const res = await gatewayFetch(`${apiUrl}/models`, {
+          method: "GET",
+          headers: {
+            Authorization: `Bearer ${apiKey}`,
+            "X-Request-ID": `check-${Date.now()}`
+          }
+        });
+
+        if (!res.ok) {
+          const errData = await res.json().catch(() => ({}));
+          throw new Error(errData?.error?.message || `HTTP ${res.status} ${res.statusText}`);
+        }
+
+        const data = await res.json();
+        const models = Array.isArray(data?.data) ? data.data : [];
+        setConnStatus("success", `连接成功！可用模型数: ${models.length}`);
+        
+        // 自动拉取更新模型下拉框
+        updateModelDropdownFromList(models);
+        return true;
+      } catch (err) {
+        setConnStatus("error", `连接失败: ${err.message}`);
+        return false;
+      }
+    }
+
+    function setConnStatus(type, text) {
+      el.connStatusText.textContent = text;
+      el.connStatusDot.className = "w-2 h-2 rounded-full shrink-0";
+      if (type === "connecting") {
+        el.connStatusDot.classList.add("bg-amber-500", "animate-pulse");
+      } else if (type === "success") {
+        el.connStatusDot.classList.add("bg-emerald-500");
+      } else if (type === "error") {
+        el.connStatusDot.classList.add("bg-rose-500");
+      } else {
+        el.connStatusDot.classList.add("bg-neutral-300");
+      }
+    }
+
+    // 常用且被平台支持的预置生图模型列表（始终保底完整展示）
+    const PRESET_IMAGE_MODELS = [
+      "gpt-image-2",
+      "gpt-image-2.5-flare",
+      "gemini-2.5-flash-image-preview",
+      "gemini-3-pro-image-preview",
+      "gemini-3.1-flash-image-preview",
+      "grok-imagine-image"
+    ];
+
+    function updateModelDropdownFromList(allModels) {
+      gatewayKnownModels = allModels.map(m => m.id);
+
+      // 提取网关返回的模型中属于生图类的模型
+      let imgModels = allModels.filter(m => m.kind === "image");
+      if (!imgModels.length) {
+        // 排除纯文本模型（如纯 -pro-preview 结尾或以 chat/flash 结尾），保留包含 image 的模型
+        imgModels = allModels.filter(m => /(image|gpt-image|grok-imagine)/i.test(m.id || "") && !/(pro-preview$|chat$)/i.test(m.id || ""));
+      }
+
+      // 允许的模型过滤
+      const allowedRegex = /^(gpt-image|gemini-.*image|grok-imagine)/i;
+      let filteredIds = imgModels.filter(m => allowedRegex.test(m.id || "")).map(m => m.id);
+
+      // 与预置常用生图模型合并，确保 gemini-3.1-flash-image-preview 等主力模型无论网关返回与否始终展示
+      const mergedList = [...new Set([...PRESET_IMAGE_MODELS, ...filteredIds])];
+
+      const preferredModel = appConfig.model || getSelectedModel();
+      el.modelSelect.innerHTML = "";
+
+      mergedList.forEach(id => {
+        const opt = document.createElement("option");
+        opt.value = id;
+        opt.textContent = id;
+        el.modelSelect.appendChild(opt);
+      });
+
+      if (mergedList.includes(preferredModel)) {
+        el.modelSelect.value = preferredModel;
+      } else if (mergedList.includes("gpt-image-2")) {
+        el.modelSelect.value = "gpt-image-2";
+      } else if (mergedList.length > 0) {
+        el.modelSelect.value = mergedList[0];
+      }
+
+      el.modelChannelHint.textContent = `已就绪 ${mergedList.length} 个生图模型`;
+      saveConfig();
+    }
+
+    async function fetchGatewayModels() {
+      const apiUrl = (appConfig.apiUrl || DEFAULT_CONFIG.apiUrl).replace(/\/+$/, "");
+      const apiKey = appConfig.apiKey;
+
+      if (!apiKey) {
+        alert("请先点击右上角「设置」填写您的 API Key！");
+        openSettingsDrawer();
+        return;
+      }
+
+      el.refreshIcon.classList.add("animate-spin");
+      try {
+        const res = await gatewayFetch(`${apiUrl}/models`, {
+          method: "GET",
+          headers: {
+            Authorization: `Bearer ${apiKey}`,
+            "X-Request-ID": `models-${Date.now()}`
+          }
+        });
+
+        if (!res.ok) {
+          const errData = await res.json().catch(() => ({}));
+          throw new Error(errData?.error?.message || `HTTP ${res.status}`);
+        }
+
+        const data = await res.json();
+        const allModels = Array.isArray(data?.data) ? data.data : [];
+        updateModelDropdownFromList(allModels);
+      } catch (err) {
+        console.error("拉取模型失败:", err);
+        alert("获取模型列表失败: " + err.message);
+      } finally {
+        el.refreshIcon.classList.remove("animate-spin");
+      }
+    }
+
+    /* --------------------------------------------------------------------
+     * 参考图与素材上传管理
+     * -------------------------------------------------------------------- */
+    function updateRefImagesUI() {
+      el.refImageCountBadge.textContent = uploadedRefImages.length;
+      el.refImagesGrid.innerHTML = "";
+
+      uploadedRefImages.forEach((imgItem, idx) => {
+        const wrap = document.createElement("div");
+        wrap.className = "relative group rounded border border-neutral-200 overflow-hidden aspect-square bg-neutral-100 cursor-grab active:cursor-grabbing";
+        wrap.draggable = true;
+        wrap.title = "参考图 " + (idx + 1) + "，拖动调整顺序";
+        wrap.addEventListener("dragstart", e => {
+          draggedRefImage = imgItem;
+          e.dataTransfer.effectAllowed = "move";
+          e.dataTransfer.setData("text/plain", String(idx));
+          wrap.classList.add("opacity-40");
+        });
+        wrap.addEventListener("dragover", e => {
+          if (!draggedRefImage) return;
+          e.preventDefault();
+          e.stopPropagation();
+          e.dataTransfer.dropEffect = "move";
+          if (draggedRefImage !== imgItem) wrap.classList.add("ring-2", "ring-black");
+        });
+        wrap.addEventListener("dragleave", () => wrap.classList.remove("ring-2", "ring-black"));
+        wrap.addEventListener("drop", e => {
+          if (!draggedRefImage) return;
+          e.preventDefault();
+          e.stopPropagation();
+          const from = uploadedRefImages.indexOf(draggedRefImage);
+          const to = uploadedRefImages.indexOf(imgItem);
+          draggedRefImage = null;
+          moveRefImage(from, to);
+        });
+        wrap.addEventListener("dragend", () => {
+          draggedRefImage = null;
+          [...el.refImagesGrid.children].forEach(item => item.classList.remove("opacity-40", "ring-2", "ring-black"));
+        });
+
+        const img = document.createElement("img");
+        img.src = imgItem.dataUrl;
+        img.className = "w-full h-full object-cover";
+        img.alt = imgItem.name;
+        img.draggable = false;
+
+        const delBtn = document.createElement("button");
+        delBtn.type = "button";
+        delBtn.className = "absolute top-1 right-1 w-5 h-5 bg-black/70 hover:bg-black text-white rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition";
+        delBtn.innerHTML = "&times;";
+        delBtn.onclick = (e) => {
+          e.stopPropagation();
+          uploadedRefImages.splice(idx, 1);
+          updateRefImagesUI();
+        };
+
+        wrap.appendChild(img);
+        wrap.appendChild(delBtn);
+        el.refImagesGrid.appendChild(wrap);
+      });
+      syncPromptAspectRatio();
+    }
+
+    function moveRefImage(from, to) {
+      if (from < 0 || to < 0 || from >= uploadedRefImages.length || to >= uploadedRefImages.length) return;
+      const [image] = uploadedRefImages.splice(from, 1);
+      uploadedRefImages.splice(to, 0, image);
+      updateRefImagesUI();
+    }
+
+    async function handleRefFiles(files) {
+      const hadNoRef = uploadedRefImages.length === 0;
+      let addedCount = 0;
+      for (const file of files) {
+        if (!file.type.startsWith("image/")) continue;
+        const dataUrl = await readFileAsDataUrl(file);
+        const dims = await readImageDimensions(dataUrl);
+        uploadedRefImages.push({
+          file,
+          dataUrl,
+          name: file.name,
+          width: dims.width,
+          height: dims.height,
+          aspectRatio: detectImageAspectRatio(dims.width, dims.height)
+        });
+        addedCount++;
+      }
+      if (hadNoRef && addedCount > 0) {
+        useRefAspectRatio = true;
+        manualRatioOverride = Boolean(detectedPromptRatio);
+      }
+      updateRefImagesUI();
+      el.refImagesContainer.classList.remove("hidden");
+      el.refImagesChevron.classList.add("rotate-180");
+    }
+
+    function readFileAsDataUrl(file) {
+      return new Promise((res, rej) => {
+        const reader = new FileReader();
+        reader.onload = () => res(reader.result);
+        reader.onerror = rej;
+        reader.readAsDataURL(file);
+      });
+    }
+
+    /* --------------------------------------------------------------------
+     * 尺寸与网关适配计算
+     * -------------------------------------------------------------------- */
+    function computeCompatibleSize(aspectRatio, resolution, apiUrl) {
+      const isApimart = /apimart|apib/i.test(apiUrl);
+      if (isApimart) {
+        return {
+          size: aspectRatio,
+          resolution: resolution
+        };
+      }
+
+      const pixelMap = {
+        "1:1": { "1k": "1024x1024", "2k": "2048x2048", "4k": "2880x2880" },
+        "16:9": { "1k": "1792x1024", "2k": "2048x1152", "4k": "3840x2160" },
+        "9:16": { "1k": "1024x1792", "2k": "1152x2048", "4k": "2160x3840" },
+        "4:3": { "1k": "1408x1056", "2k": "2048x1536", "4k": "2880x2160" },
+        "3:4": { "1k": "1056x1408", "2k": "1536x2048", "4k": "2160x2880" },
+        "21:9": { "1k": "1792x768", "2k": "2560x1088", "4k": "3840x1648" },
+        "3:2": { "1k": "1536x1024", "2k": "2048x1365", "4k": "3072x2048" },
+        "2:3": { "1k": "1024x1536", "2k": "1365x2048", "4k": "2048x3072" }
+      };
+      let size = pixelMap[aspectRatio]?.[resolution] || pixelMap[aspectRatio]?.["1k"];
+      if (!size) {
+        const [w, h] = aspectRatio.split(":").map(Number);
+        const ratio = w > 0 && h > 0 ? w / h : 1;
+        const base = { "1k": 1024, "2k": 2048, "4k": 2880 }[resolution] || 1024;
+        const width = Math.max(64, Math.round(base * Math.sqrt(ratio) / 8) * 8);
+        const height = Math.max(64, Math.round(base / Math.sqrt(ratio) / 8) * 8);
+        size = width + "x" + height;
+      }
+      return {
+        size,
+        aspect_ratio: aspectRatio,
+        resolution: resolution
+      };
+    }
+
+    /* --------------------------------------------------------------------
+     * 生成任务提交与轮询执行核心
+     * -------------------------------------------------------------------- */
+    async function startGeneration() {
+      syncPromptAspectRatio();
+      saveConfig();
+      const apiKey = appConfig.apiKey.trim();
+      const apiUrl = (appConfig.apiUrl || DEFAULT_CONFIG.apiUrl).trim().replace(/\/+$/, "");
+      const rawPrompt = el.promptInput.value.trim();
+      const prompt = manualRatioOverride && detectedPromptRatio ? stripPromptRatios(rawPrompt) : rawPrompt;
+      if (!apiKey) {
+        alert("请先点击右上角「设置」配置您的 API Key！");
+        openSettingsDrawer();
+        return;
+      }
+      if (!prompt && uploadedRefImages.length === 0) {
+        alert("请输入提示词或上传参考图！");
+        el.promptInput.focus();
+        return;
+      }
+
+      const taskId = "task_" + crypto.randomUUID();
+      const taskEntry = {
+        id: taskId,
+        model: getSelectedModel(),
+        prompt: prompt || "(使用参考图生成)",
+        resolution: el.resolutionSelect.value,
+        aspectRatio: getEffectiveAspectRatio(),
+        outputFormat: el.outputFormatSelect.value,
+        background: el.backgroundSelect.value,
+        moderation: el.moderationSelect.value,
+        imageCount: parseInt(el.imageCountSelect.value, 10) || 1,
+        refImages: uploadedRefImages.map(img => img.dataUrl),
+        status: "generating",
+        createdAt: new Date().toLocaleTimeString(),
+        timestamp: Date.now(),
+        images: [], localFiles: [], errorMsg: ""
+      };
+      // 全部请求结束后再提交，开始新一批；未结束时保留这一批的所有结果。
+      if (runningTasks.size === 0) previewTasks.clear();
+      const controller = new AbortController();
+      runningTasks.set(taskId, controller);
+      taskHistory.unshift(taskEntry);
+      currentHistoryPage = 1;
+      persistTasks();
+      setActiveTask(taskEntry);
+      renderTasksGrid();
+      setGeneratingUI();
+      const timerInterval = setInterval(renderTaskPreviews, 1000);
+      const reqStart = Date.now();
+      let rawPayload, rawResponse;
+      try {
+        const result = await executeImageRequest(taskEntry, controller.signal, { apiUrl, apiKey });
+        if (controller.signal.aborted) throw new DOMException("已停止生成", "AbortError");
+        ({ rawPayload, rawResponse } = result);
+        taskEntry.status = "success";
+        taskEntry.images = result.resultImages;
+        taskEntry.duration = ((Date.now() - reqStart) / 1000).toFixed(1) + "s";
+        runningTasks.delete(taskId);
+        setGeneratingUI();
+        persistTasks();
+        renderTasksGrid();
+        renderTaskOutput(taskEntry);
+        await saveTaskImages(taskEntry);
+        persistTasks();
+        renderTaskPreviews();
+        addLogRecord({
+          id: taskId, time: new Date().toLocaleTimeString(), status: "success",
+          model: taskEntry.model,
+          summary: '生成成功 (' + taskEntry.images.length + 'P · ' + taskEntry.duration + ')',
+          endpoint: result.endpoint || (apiUrl + '/images/generations'), method: "POST",
+          duration: taskEntry.duration, payload: rawPayload, response: rawResponse
+        });
+      } catch (err) {
+        taskEntry.status = controller.signal.aborted ? "cancelled" : "error";
+        taskEntry.errorMsg = controller.signal.aborted ? "已停止生成" : (err.message || "生成失败");
+        taskEntry.duration = ((Date.now() - reqStart) / 1000).toFixed(1) + "s";
+        persistTasks();
+        renderTasksGrid();
+        renderTaskError(taskEntry);
+        addLogRecord({
+          id: taskId, time: new Date().toLocaleTimeString(), status: "error", model: taskEntry.model,
+          summary: taskEntry.errorMsg.slice(0, 36), endpoint: err.endpoint || (apiUrl + '/images/generations'),
+          method: "POST", duration: taskEntry.duration,
+          payload: err.requestPayload || { model: taskEntry.model, prompt: taskEntry.prompt },
+          response: err.responseData || null, error: taskEntry.errorMsg
+        });
+      } finally {
+        clearInterval(timerInterval);
+        runningTasks.delete(taskId);
+        setGeneratingUI();
+        renderTaskPreviews();
+      }
+    }
+
+    function generateOutputFilename(modelName, index, format, taskId = "") {
+      const now = new Date();
+      const pad = (n) => String(n).padStart(2, "0");
+      const dateStr = `${now.getFullYear()}${pad(now.getMonth() + 1)}${pad(now.getDate())}_${pad(now.getHours())}${pad(now.getMinutes())}${pad(now.getSeconds())}`;
+      const safeModel = (modelName || "model").replace(/[^a-zA-Z0-9_\-\.]/g, "_");
+      const ext = format === "jpeg" ? "jpg" : (format || "png");
+      return `${dateStr}_${safeModel}_${taskId ? taskId + "_" : ""}${pad(index)}.${ext}`;
+    }
+
+    function dataUrlToBlob(dataUrl) {
+      const parts = String(dataUrl || "").split(",");
+      const header = parts[0] || "";
+      const mimeMatch = header.match(/data:([^;]+)/i);
+      const mime = mimeMatch ? mimeMatch[1] : "image/png";
+      const binStr = atob(parts[1] || "");
+      const len = binStr.length;
+      const bytes = new Uint8Array(len);
+      for (let i = 0; i < len; i++) {
+        bytes[i] = binStr.charCodeAt(i);
+      }
+      return new Blob([bytes], { type: mime });
+    }
+
+    async function executeImageRequest(task, signal, connection = appConfig) {
+      const apiUrl = (connection.apiUrl || DEFAULT_CONFIG.apiUrl).replace(/\/+$/, "");
+      const apiKey = connection.apiKey;
+      const refImages = Array.isArray(task.refImages) ? task.refImages.filter(Boolean) : [];
+      const hasLocalDataImages = refImages.some(src => /^data:/i.test(src));
+      const useMultipartEdits = hasLocalDataImages;
+      const endpoint = useMultipartEdits ? `${apiUrl}/images/edits` : `${apiUrl}/images/generations`;
+
+      const reqCount = task.imageCount || 1;
+      const sizeConfig = computeCompatibleSize(task.aspectRatio, task.resolution, apiUrl);
+
+      const isXaiGrok = /grok/i.test(task.model);
+      const isGemini = /gemini/i.test(task.model);
+      const isApimart = /apimart|apib/i.test(apiUrl);
+
+      function buildRequestSpec(nCount) {
+        const logPayload = {
+          model: task.model,
+          prompt: task.prompt,
+          n: nCount,
+          response_format: "url",
+          ...sizeConfig
+        };
+        if (!isXaiGrok && !isGemini) {
+          if (task.outputFormat) logPayload.output_format = task.outputFormat;
+          if (task.moderation) logPayload.moderation = task.moderation;
+          if (task.background && task.background !== "auto") {
+            logPayload.background = task.background;
+          }
+        }
+        if (refImages.length > 0) {
+          if (useMultipartEdits) {
+            logPayload.images_count = refImages.length;
+            logPayload.image = refImages;
+          } else {
+            logPayload.image_urls = refImages;
+          }
+        }
+
+        if (!useMultipartEdits) {
+          return {
+            logPayload,
+            headers: {
+              Authorization: `Bearer ${apiKey}`,
+              "Content-Type": "application/json",
+              "X-Request-ID": `req-${Date.now()}-${Math.random().toString(36).slice(2, 7)}`
+            },
+            body: JSON.stringify(logPayload)
+          };
+        }
+
+        // 有本地上传参考图时按 OpenAI / SellerAim 规范走 POST /v1/images/edits (multipart/form-data)
+        const formData = new FormData();
+        formData.append("model", task.model);
+        formData.append("prompt", task.prompt);
+        formData.append("n", String(nCount));
+        formData.append("response_format", "url");
+        if (sizeConfig.size) formData.append("size", sizeConfig.size);
+        if (isApimart && sizeConfig.resolution) formData.append("resolution", sizeConfig.resolution);
+        if (!isXaiGrok && !isGemini) {
+          if (task.outputFormat) formData.append("output_format", task.outputFormat);
+          if (task.moderation) formData.append("moderation", task.moderation);
+          if (task.background && task.background !== "auto") {
+            formData.append("background", task.background);
+          }
+        }
+        refImages.forEach((src, idx) => {
+          const blob = dataUrlToBlob(src);
+          const ext = (blob.type.split("/")[1] || "png").replace(/[^a-z0-9]/gi, "").replace("jpeg", "jpg") || "png";
+          formData.append("image", blob, `ref_${idx + 1}.${ext}`);
+        });
+
+        return {
+          logPayload,
+          headers: {
+            Authorization: `Bearer ${apiKey}`,
+            "X-Request-ID": `req-${Date.now()}-${Math.random().toString(36).slice(2, 7)}`
+          },
+          body: formData
+        };
+      }
+
+      const firstSpec = buildRequestSpec(reqCount);
+      console.log("[Request] 提交生图请求:", endpoint, firstSpec.logPayload);
+
+      // 单次请求助手函数
+      const sendSingleReq = async (spec) => {
+        let response;
+        try {
+          response = await gatewayFetch(endpoint, {
+            method: "POST",
+            headers: spec.headers,
+            body: spec.body,
+            signal
+          });
+        } catch (networkErr) {
+          networkErr.endpoint = endpoint;
+          networkErr.requestPayload = spec.logPayload;
+          throw networkErr;
+        }
+
+        const resData = await response.json().catch(() => ({}));
+        console.log("[Response] 接口返回:", resData);
+
+        if (!response.ok) {
+          const errorMsg = resData?.error?.message || resData?.message || `HTTP ${response.status} ${response.statusText}`;
+          const err = new Error(errorMsg);
+          err.endpoint = endpoint;
+          err.requestPayload = spec.logPayload;
+          err.responseData = resData;
+          err.statusCode = response.status;
+          throw err;
+        }
+
+        if (resData.data && Array.isArray(resData.data) && resData.data.length > 0) {
+          const images = resData.data.map(item => item.url || (item.b64_json ? `data:image/png;base64,${item.b64_json}` : null)).filter(Boolean);
+          return { resultImages: images, rawPayload: spec.logPayload, rawResponse: resData, usedModel: spec.logPayload.model, endpoint };
+        }
+
+        const taskId = resData.id || resData.task_id;
+        const pollUrl = resData.poll_url;
+        if (taskId || pollUrl) {
+          const images = await pollTaskResult(apiUrl, apiKey, taskId, pollUrl, signal);
+          return { resultImages: images, rawPayload: spec.logPayload, rawResponse: resData, usedModel: spec.logPayload.model, endpoint };
+        }
+
+        const err = new Error("接口未返回可识别的图像数据格式");
+        err.endpoint = endpoint;
+        err.requestPayload = spec.logPayload;
+        err.responseData = resData;
+        throw err;
+      };
+
+      // 严格按照用户指定的单一模型发起请求，绝不自动偷换模型
+      const firstResult = await sendSingleReq(firstSpec);
+      const gatheredImages = [...(firstResult.resultImages || [])];
+
+      // 如果需要多张且上游只返回了 1 张，并发补齐同一模型
+      if (reqCount > 1 && gatheredImages.length < reqCount) {
+        const remainingCount = reqCount - gatheredImages.length;
+        console.log(`[AutoBatch] 上游仅返回 ${gatheredImages.length} 张，正在自动发起 ${remainingCount} 路并发补齐目标张数...`);
+        
+        const parallelPromises = [];
+        for (let i = 0; i < remainingCount; i++) {
+          parallelPromises.push(sendSingleReq(buildRequestSpec(1)).catch(e => {
+            console.warn(`[AutoBatch] 补齐第 ${i + 1} 张失败:`, e.message);
+            return null;
+          }));
+        }
+
+        const additionalResults = await Promise.all(parallelPromises);
+        additionalResults.forEach(res => {
+          if (res && res.resultImages && res.resultImages.length > 0) {
+            gatheredImages.push(...res.resultImages);
+          }
+        });
+      }
+
+      return {
+        resultImages: gatheredImages,
+        rawPayload: firstSpec.logPayload,
+        rawResponse: firstResult.rawResponse,
+        endpoint
+      };
+    }
+
+    async function pollTaskResult(apiUrl, apiKey, taskId, pollUrl, signal) {
+      let endpoint;
+      if (pollUrl) {
+        endpoint = pollUrl.startsWith("http") ? pollUrl : `${apiUrl}${pollUrl.startsWith("/") ? "" : "/"}${pollUrl}`;
+      } else {
+        endpoint = `${apiUrl}/images/generations/${taskId}`;
+      }
+
+      const maxWaitMs = 180000;
+      const startTime = Date.now();
+      const intervalMs = 2500;
+
+      while (Date.now() - startTime < maxWaitMs) {
+        if (signal.aborted) throw new DOMException("用户已取消", "AbortError");
+        await new Promise(r => setTimeout(r, intervalMs));
+
+        const res = await gatewayFetch(endpoint, {
+          method: "GET",
+          headers: {
+            Authorization: `Bearer ${apiKey}`,
+            "X-Request-ID": `poll-${Date.now()}`
+          },
+          signal
+        });
+
+        if (!res.ok) {
+          const errData = await res.json().catch(() => ({}));
+          throw new Error(errData?.error?.message || "轮询任务状态失败");
+        }
+
+        const data = await res.json();
+        const status = (data.status || "").toLowerCase();
+
+        if (["completed", "success", "succeeded"].includes(status)) {
+          const result = data.result || data;
+          if (Array.isArray(result?.data)) {
+            return result.data.map(item => item.url || item.b64_json).filter(Boolean);
+          }
+          if (Array.isArray(result?.images)) {
+            return result.images;
+          }
+          if (result?.url) return [result.url];
+        }
+
+        if (["failed", "failure", "error"].includes(status)) {
+          throw new Error(data.error?.message || data.fail_reason || "图像生成失败");
+        }
+      }
+
+      throw new Error("生成任务轮询超时（超过3分钟）");
+    }
+
+    function cancelGeneration(taskId) {
+      if (typeof taskId === "string") {
+        runningTasks.get(taskId)?.abort();
+      } else {
+        runningTasks.forEach(controller => controller.abort());
+      }
+    }
+
+    function setGeneratingUI() {
+      isCanvasGenerating = runningTasks.size > 0;
+      el.stopBtn.classList.toggle("hidden", !isCanvasGenerating);
+      el.stopBtn.textContent = '停止全部（' + runningTasks.size + '）';
+    }
+
+    function resetCanvasToEmpty() {
+      currentActiveTask = null;
+      renderTaskPreviews();
+    }
+
+    function renderTaskOutput(task) { renderTaskPreviews(); }
+    function renderTaskError(task) { renderTaskPreviews(); }
+
+    function setActiveTask(task) {
+      currentActiveTask = task;
+      previewTasks.set(task.id, task);
+      renderTaskPreviews();
+    }
+
+    function getTaskPreviewRatio(task) {
+      const ratio = String(task.aspectRatio || "1:1").split(":").map(Number);
+      return ratio.length === 2 && ratio.every(n => Number.isFinite(n) && n > 0)
+        ? ratio[0] + " / " + ratio[1] : "1 / 1";
+    }
+
+    function renderTaskPreviews() {
+      const tasks = [...previewTasks.values()];
+      el.canvasImageWrapper.style.gridTemplateColumns = `repeat(${Math.min(3, Math.max(1, tasks.length))}, minmax(0, 1fr))`;
+      el.canvasEmptyState.classList.toggle("hidden", tasks.length > 0);
+      el.canvasImageWrapper.classList.toggle("hidden", tasks.length === 0);
+      el.canvasLoadingState.classList.add("hidden");
+      if (textureCanvas) textureCanvas.style.display = tasks.length ? "none" : "block";
+      for (const [id, parts] of previewCards) {
+        if (!previewTasks.has(id)) { parts.stopTexture?.(); parts.card.remove(); previewCards.delete(id); }
+      }
+      const count = tasks.filter(t => t.status === "generating").length;
+      el.outputStatusBadge.textContent = tasks.length
+        ? tasks.length + ' 个任务 · ' + count + ' 个生成中' : '准备就绪';
+      tasks.forEach(task => {
+        let parts = previewCards.get(task.id);
+        if (!parts) {
+          const card = document.createElement("article");
+          card.className = "task-preview relative z-10";
+          card.dataset.taskId = task.id;
+          const status = document.createElement("div");
+          status.className = "task-preview-status";
+          const body = document.createElement("div");
+          body.className = "task-preview-body";
+          const actions = document.createElement("div");
+          actions.className = "task-preview-actions";
+          const icons = {
+            "提示词": '<path d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.6L19 9v10a2 2 0 01-2 2z"/>',
+            "保存图片": '<path d="M12 3v12m-4-4l4 4 4-4M5 17v4h14v-4"/>',
+            "停止此任务": '<rect x="6" y="6" width="12" height="12" rx="1"/>'
+          };
+          const action = (label, handler) => {
+            const button = document.createElement("button");
+            button.type = "button";
+            button.title = label;
+            button.setAttribute("aria-label", label);
+            button.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">' + icons[label] + '</svg>';
+            button.addEventListener("click", e => { e.stopPropagation(); handler(); });
+            actions.appendChild(button);
+            return button;
+          };
+          action("提示词", () => openPromptModal(task));
+          const download = action("保存图片", () => { saveTaskImages(task); });
+          const stop = action("停止此任务", () => cancelGeneration(task.id));
+          card.addEventListener("click", () => {
+            currentActiveTask = task;
+            renderTaskPreviews();
+            renderTasksGrid();
+          });
+          card.append(body, status, actions);
+          el.canvasImageWrapper.appendChild(card);
+          parts = { card, status, body, download, stop, renderedStatus: null };
+          previewCards.set(task.id, parts);
+        }
+        parts.status.hidden = task.status !== "generating";
+        const duration = task.status === "generating"
+          ? Math.floor((Date.now() - task.timestamp) / 1000) + 's' : task.duration || '';
+        const label = { generating: '生成中', success: '生成完成', cancelled: '已停止', error: '生成失败' }[task.status] || task.status;
+        parts.status.textContent = label + ' · ' + duration;
+        parts.stop.hidden = task.status !== "generating";
+        parts.stop.disabled = runningTasks.get(task.id)?.signal.aborted || false;
+        parts.download.hidden = task.status !== "success";
+        parts.download.disabled = task.saveStatus === "saving";
+        parts.download.title = task.saveStatus === "error" ? "保存失败，点击重试：" + task.saveError
+          : task.saveStatus === "saving" ? "正在保存到 outputs" : "保存到本项目 outputs 文件夹";
+        parts.download.style.backgroundColor = task.saveStatus === "error" ? "#dc2626" : "";
+        // 只更新状态发生变化的卡片，其他任务的图片和预览位置保持稳定。
+        if (parts.renderedStatus === task.status) return;
+        parts.renderedStatus = task.status;
+        parts.stopTexture?.();
+        parts.stopTexture = null;
+        parts.body.replaceChildren();
+        // 生成时按所选比例占位，成功后由图片自然尺寸撑开，避免留白和裁切。
+        parts.body.style.aspectRatio = task.status === "success" ? "auto" : getTaskPreviewRatio(task);
+        if (task.status === "success") {
+          const images = document.createElement("div");
+          images.className = "task-preview-images";
+          if (task.images.length > 1) images.style.gridTemplateColumns = 'repeat(2, minmax(0, 1fr))';
+          task.images.forEach(src => {
+            const img = document.createElement("img");
+            img.src = src;
+            img.alt = task.prompt;
+            img.addEventListener("click", () => openLightbox(src));
+            images.appendChild(img);
+          });
+          parts.body.appendChild(images);
+        } else if (task.status === "generating") {
+          const canvas = document.createElement("canvas");
+          canvas.className = "absolute inset-0 w-full h-full pointer-events-none";
+          canvas.setAttribute("aria-hidden", "true");
+          const spinner = document.createElement("div");
+          spinner.className = "relative z-10 w-10 h-10 border-2 border-neutral-200 border-t-black rounded-full animate-spin";
+          parts.body.append(canvas, spinner);
+          parts.stopTexture = createTextureAnimation(canvas, parts.body, true);
+        } else {
+          const error = document.createElement("p");
+          error.className = "p-6 text-xs text-rose-600 break-words text-center";
+          error.textContent = task.errorMsg || '生成失败';
+          parts.body.appendChild(error);
+        }
+      });
+    }
+
+    /* --------------------------------------------------------------------
+     * 下方「生成记录」两行分页网格与操作弹窗
+     * -------------------------------------------------------------------- */
+    function getTasksPageSize() {
+      const w = window.innerWidth;
+      if (w >= 1024) return 16; // 8 列 * 2 行
+      if (w >= 768) return 12;  // 6 列 * 2 行
+      if (w >= 640) return 8;   // 4 列 * 2 行
+      return 4;                 // 2 列 * 2 行
+    }
+
+    function openPromptModal(task) {
+      if (!task) return;
+      el.modalModelText.textContent = task.model || "-";
+      el.modalDurationText.textContent = task.duration || "未记录";
+      el.modalPromptText.textContent = task.prompt || "(空提示词)";
+      el.copyModalPromptBtn.textContent = "复制提示词";
+      el.promptDetailModal.classList.remove("hidden");
+    }
+
+    function closePromptModal() {
+      el.promptDetailModal.classList.add("hidden");
+    }
+
+    function openDeleteConfirmModal(task) {
+      if (!task) return;
+      pendingDeleteTaskId = task.id;
+      el.deleteConfirmModal.classList.remove("hidden");
+    }
+
+    function closeDeleteConfirmModal() {
+      pendingDeleteTaskId = null;
+      el.deleteConfirmModal.classList.add("hidden");
+    }
+
+    function getHiddenOutputFiles() {
+      try {
+        const raw = localStorage.getItem(STORAGE_KEY_HIDDEN_FILES);
+        const arr = raw ? JSON.parse(raw) : [];
+        return Array.isArray(arr) ? arr : [];
+      } catch (e) {
+        return [];
+      }
+    }
+
+    function addHiddenOutputFiles(filenames) {
+      if (!Array.isArray(filenames) || !filenames.length) return;
+      try {
+        const set = new Set(getHiddenOutputFiles());
+        filenames.forEach(name => { if (name) set.add(name); });
+        localStorage.setItem(STORAGE_KEY_HIDDEN_FILES, JSON.stringify([...set].slice(-200)));
+      } catch (e) {}
+    }
+
+    function confirmDeleteTask() {
+      if (!pendingDeleteTaskId) return;
+      const targetId = pendingDeleteTaskId;
+      const targetTask = taskHistory.find(t => t.id === targetId);
+      const wasActive = currentActiveTask && currentActiveTask.id === targetId;
+
+      if (targetTask && Array.isArray(targetTask.localFiles) && targetTask.localFiles.length) {
+        addHiddenOutputFiles(targetTask.localFiles);
+      }
+
+      cancelGeneration(targetId);
+      previewTasks.delete(targetId);
+      taskHistory = taskHistory.filter(t => t.id !== targetId);
+      persistTasks();
+      closeDeleteConfirmModal();
+
+      if (wasActive) {
+        if (taskHistory.length > 0) {
+          setActiveTask(taskHistory[0]);
+        } else {
+          resetCanvasToEmpty();
+        }
+      }
+      renderTaskPreviews();
+      renderTasksGrid();
+    }
+
+    function renderTasksGrid() {
+      if (!taskHistory.length) {
+        el.tasksEmptyHint.classList.remove("hidden");
+        el.tasksPagination.classList.add("hidden");
+        el.tasksGrid.innerHTML = "";
+        return;
+      }
+
+      el.tasksEmptyHint.classList.add("hidden");
+      el.tasksGrid.innerHTML = "";
+
+      const pageSize = getTasksPageSize();
+      const totalPages = Math.max(1, Math.ceil(taskHistory.length / pageSize));
+      if (currentHistoryPage > totalPages) currentHistoryPage = totalPages;
+      if (currentHistoryPage < 1) currentHistoryPage = 1;
+
+      if (totalPages > 1) {
+        el.tasksPagination.classList.remove("hidden");
+        el.pageIndicator.textContent = `${currentHistoryPage} / ${totalPages}`;
+        el.prevPageBtn.disabled = currentHistoryPage <= 1;
+        el.nextPageBtn.disabled = currentHistoryPage >= totalPages;
+      } else {
+        el.tasksPagination.classList.add("hidden");
+      }
+
+      const startIdx = (currentHistoryPage - 1) * pageSize;
+      const pageTasks = taskHistory.slice(startIdx, startIdx + pageSize);
+
+      pageTasks.forEach(task => {
+        const card = document.createElement("div");
+        const isActive = currentActiveTask && currentActiveTask.id === task.id;
+        // 选中态仅保留单个黑边框
+        card.className = `relative rounded-md overflow-hidden aspect-square cursor-pointer transition-all duration-150 group bg-neutral-900 flex items-center justify-center ${
+          isActive ? "border-2 border-black" : "border border-neutral-200 hover:border-neutral-400 hover:shadow-sm"
+        }`;
+
+        if (task.status === "generating") {
+          card.innerHTML = `
+            <div class="text-center p-2">
+              <div class="w-6 h-6 border-2 border-white/20 border-t-white rounded-full animate-spin mx-auto mb-1.5"></div>
+              <span class="text-[10px] text-white/80 font-medium">生成中</span>
+            </div>
+          `;
+        } else if (task.status === "success" && task.images && task.images[0]) {
+          const img = document.createElement("img");
+          img.src = task.images[0];
+          img.className = "w-full h-full object-cover group-hover:scale-105 transition-transform duration-200";
+          card.appendChild(img);
+
+          const overlay = document.createElement("div");
+          overlay.className = "absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity p-2 flex flex-col justify-end text-white text-[10px] pointer-events-none";
+          overlay.innerHTML = `
+            <span class="font-bold truncate">${escapeHtml(task.model)}</span>
+            <span class="text-white/70 truncate">${escapeHtml(task.prompt)}</span>
+          `;
+          card.appendChild(overlay);
+
+          if (task.images.length > 1) {
+            const countBadge = document.createElement("span");
+            countBadge.className = "absolute top-1.5 left-1.5 bg-black/70 backdrop-blur-sm text-white text-[9px] font-bold px-1.5 py-0.5 rounded pointer-events-none";
+            countBadge.textContent = task.images.length + "P";
+            card.appendChild(countBadge);
+          }
+        } else {
+          card.innerHTML = `
+            <div class="text-center p-2 text-rose-400">
+              <svg class="w-5 h-5 mx-auto mb-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+              </svg>
+              <span class="text-[10px]">${task.status === "cancelled" ? "已停止" : "失败"}</span>
+            </div>
+          `;
+        }
+
+        // 鼠标经过卡片时显示的悬浮图标按钮组（仅图标，无文字）
+        const hoverActions = document.createElement("div");
+        hoverActions.className = "absolute top-1.5 right-1.5 z-10 flex items-center gap-1 opacity-0 group-hover:opacity-100 transition-opacity";
+
+        // 1. 查看提示词按钮
+        const promptBtn = document.createElement("button");
+        promptBtn.type = "button";
+        promptBtn.title = "查看提示词";
+        promptBtn.className = "w-6 h-6 rounded bg-black/70 hover:bg-black text-white flex items-center justify-center backdrop-blur-xs transition shadow";
+        promptBtn.innerHTML = `
+          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+          </svg>
+        `;
+        promptBtn.onclick = (e) => {
+          e.stopPropagation();
+          openPromptModal(task);
+        };
+
+        // 2. 删除记录按钮
+        const deleteBtn = document.createElement("button");
+        deleteBtn.type = "button";
+        deleteBtn.title = "删除记录";
+        deleteBtn.className = "w-6 h-6 rounded bg-black/70 hover:bg-rose-600 text-white flex items-center justify-center backdrop-blur-xs transition shadow";
+        deleteBtn.innerHTML = `
+          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path>
+          </svg>
+        `;
+        deleteBtn.onclick = (e) => {
+          e.stopPropagation();
+          openDeleteConfirmModal(task);
+        };
+
+        hoverActions.appendChild(promptBtn);
+        hoverActions.appendChild(deleteBtn);
+        card.appendChild(hoverActions);
+
+        card.onclick = () => {
+          previewTasks.clear();
+          setActiveTask(task);
+          renderTasksGrid();
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        };
+
+        el.tasksGrid.appendChild(card);
+      });
+    }
+
+    function persistTasks() {
+      try {
+        const compactList = taskHistory
+          .filter(t => !t.fromLocalOutputs)
+          .slice(0, 48)
+          .map(t => {
+            const images = Array.isArray(t.images)
+              ? t.images.map((src, i) => {
+                  const localName = Array.isArray(t.localFiles) ? t.localFiles[i] : "";
+                  if (localName) return `${LOCAL_SERVICE_BASE}/outputs/${encodeURIComponent(localName)}`;
+                  return src;
+                })
+              : [];
+            return {
+              ...t,
+              images,
+              refImages: []
+            };
+          });
+        localStorage.setItem(STORAGE_KEY_TASKS, JSON.stringify(compactList));
+      } catch (e) {
+        console.warn("存储任务历史受阻:", e);
+      }
+    }
+
+    function parseOutputFilename(filename, fallbackTs) {
+      const extMatch = filename.match(/\.([^.]+)$/);
+      const ext = extMatch ? extMatch[1].toLowerCase() : "png";
+      let match = filename.match(/^(\d{4})(\d{2})(\d{2})_(\d{2})(\d{2})(\d{2})_(.+?)_(task_[^_]+)_(\d+)\.[^.]+$/i);
+      if (match) {
+        const ts = new Date(+match[1], +match[2] - 1, +match[3], +match[4], +match[5], +match[6]).getTime();
+        return {
+          timestamp: Number.isFinite(ts) ? ts : fallbackTs,
+          model: match[7],
+          taskId: match[8],
+          index: parseInt(match[9], 10) || 1,
+          ext
+        };
+      }
+      match = filename.match(/^(\d{4})(\d{2})(\d{2})_(\d{2})(\d{2})(\d{2})_(.+?)_(\d+)\.[^.]+$/i);
+      if (match) {
+        const ts = new Date(+match[1], +match[2] - 1, +match[3], +match[4], +match[5], +match[6]).getTime();
+        return {
+          timestamp: Number.isFinite(ts) ? ts : fallbackTs,
+          model: match[7],
+          taskId: `local_${match[1]}${match[2]}${match[3]}_${match[4]}${match[5]}${match[6]}_${match[7]}`,
+          index: parseInt(match[8], 10) || 1,
+          ext
+        };
+      }
+      return {
+        timestamp: fallbackTs || Date.now(),
+        model: "本地图片",
+        taskId: `local_file_${filename}`,
+        index: 1,
+        ext
+      };
+    }
+
+    async function syncOutputsFromLocalServer() {
+      try {
+        const res = await fetch(`${LOCAL_SERVICE_BASE}/api/outputs`, { cache: "no-store" });
+        if (!res.ok) return;
+        const data = await res.json().catch(() => null);
+        const files = Array.isArray(data?.files) ? data.files : [];
+        if (!files.length) return;
+
+        const fileUrlByName = new Map();
+        const fileByTaskId = new Map();
+        files.forEach(f => {
+          const fullUrl = `${LOCAL_SERVICE_BASE}${f.url}`;
+          fileUrlByName.set(f.filename, fullUrl);
+          const parsed = parseOutputFilename(f.filename, f.timestamp);
+          if (parsed.taskId.startsWith("task_")) {
+            if (!fileByTaskId.has(parsed.taskId)) fileByTaskId.set(parsed.taskId, []);
+            fileByTaskId.get(parsed.taskId).push({ ...f, parsed, fullUrl });
+          }
+        });
+
+        let changed = false;
+        const trackedFiles = new Set(getHiddenOutputFiles());
+
+        // 1. 优先把已有任务中的图片链接关联到本地 outputs 文件，防止远程链接过期或断网无法查看
+        taskHistory.forEach(task => {
+          if (Array.isArray(task.localFiles) && task.localFiles.length) {
+            task.localFiles.forEach((fname, idx) => {
+              if (!fname) return;
+              trackedFiles.add(fname);
+              const localUrl = fileUrlByName.get(fname);
+              if (localUrl && Array.isArray(task.images) && task.images[idx] !== localUrl) {
+                task.images[idx] = localUrl;
+                const card = previewCards.get(task.id);
+                if (card) card.renderedStatus = null;
+                changed = true;
+              }
+            });
+          } else if (task.id && fileByTaskId.has(task.id)) {
+            const matched = fileByTaskId.get(task.id).sort((a, b) => a.parsed.index - b.parsed.index);
+            task.localFiles = matched.map(m => m.filename);
+            task.images = matched.map(m => m.fullUrl);
+            task.saveStatus = "saved";
+            task.localFiles.forEach(fname => trackedFiles.add(fname));
+            const card = previewCards.get(task.id);
+            if (card) card.renderedStatus = null;
+            changed = true;
+          }
+        });
+
+        // 2. 自动识别 outputs 文件夹中未被当前浏览器记录收录的历史图片
+        const groupedNew = new Map();
+        files.forEach(f => {
+          if (trackedFiles.has(f.filename)) return;
+          const parsed = parseOutputFilename(f.filename, f.timestamp);
+          if (!groupedNew.has(parsed.taskId)) {
+            groupedNew.set(parsed.taskId, {
+              id: parsed.taskId,
+              model: parsed.model,
+              timestamp: parsed.timestamp,
+              ext: parsed.ext,
+              items: []
+            });
+          }
+          groupedNew.get(parsed.taskId).items.push({
+            filename: f.filename,
+            url: `${LOCAL_SERVICE_BASE}${f.url}`,
+            index: parsed.index
+          });
+        });
+
+        if (groupedNew.size > 0) {
+          groupedNew.forEach(group => {
+            group.items.sort((a, b) => a.index - b.index);
+            const names = group.items.map(it => it.filename);
+            const urls = group.items.map(it => it.url);
+            const dt = new Date(group.timestamp);
+            taskHistory.push({
+              id: group.id,
+              model: group.model,
+              prompt: `本地 outputs 文件夹图片（${names.join("，")}）`,
+              resolution: "",
+              aspectRatio: "1:1",
+              outputFormat: group.ext === "jpg" ? "jpeg" : group.ext,
+              status: "success",
+              saveStatus: "saved",
+              fromLocalOutputs: true,
+              createdAt: Number.isFinite(dt.getTime()) ? dt.toLocaleString() : "",
+              timestamp: group.timestamp,
+              images: urls,
+              localFiles: names,
+              duration: "已存本地",
+              refImages: [],
+              errorMsg: ""
+            });
+          });
+          taskHistory.sort((a, b) => (b.timestamp || 0) - (a.timestamp || 0));
+          changed = true;
+        }
+
+        if (changed) {
+          if (!currentActiveTask && taskHistory.length > 0) {
+            currentActiveTask = taskHistory[0];
+            setActiveTask(currentActiveTask);
+          } else {
+            renderTaskPreviews();
+          }
+          renderTasksGrid();
+        }
+      } catch (e) {}
+    }
+
+    function loadSavedTasks() {
+      try {
+        const raw = localStorage.getItem(STORAGE_KEY_TASKS);
+        if (raw) {
+          taskHistory = JSON.parse(raw);
+          taskHistory.forEach(task => {
+            if (task.status === "generating") {
+              task.status = "error";
+              task.errorMsg = "页面已重新打开，原请求已中断，请重新提交。";
+            }
+          });
+          if (taskHistory.length > 0) {
+            currentActiveTask = taskHistory[0];
+            setActiveTask(currentActiveTask);
+          }
+        }
+      } catch (e) {
+        console.error("加载历史任务失败:", e);
+      }
+      renderTasksGrid();
+    }
+
+    /* --------------------------------------------------------------------
+     * 全屏 Lightbox 与图片操作
+     * -------------------------------------------------------------------- */
+    function openLightbox(src) {
+      el.lightboxImg.src = src;
+      el.lightboxModal.classList.remove("hidden");
+    }
+
+    function closeLightbox() {
+      el.lightboxModal.classList.add("hidden");
+      el.lightboxImg.src = "";
+    }
+
+    function triggerBrowserDownload(imgUrl, filename) {
+      (imgUrl instanceof Blob ? Promise.resolve(imgUrl) : fetch(imgUrl).then(r => r.blob()))
+        .then(blob => {
+          const url = URL.createObjectURL(blob);
+          const a = document.createElement("a");
+          a.href = url;
+          a.download = filename;
+          document.body.appendChild(a);
+          a.click();
+          setTimeout(() => {
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+          }, 1000);
+        });
+    }
+
+    /* --------------------------------------------------------------------
+     * 设置抽屉开闭与交互
+     * -------------------------------------------------------------------- */
+    function openSettingsDrawer() {
+      el.settingsDrawer.classList.remove("pointer-events-none");
+      el.drawerOverlay.classList.remove("opacity-0", "pointer-events-none");
+      el.drawerOverlay.classList.add("opacity-100", "pointer-events-auto");
+      el.drawerContent.classList.remove("translate-x-full");
+      el.drawerContent.classList.add("translate-x-0");
+    }
+
+    function closeSettingsDrawer() {
+      el.drawerOverlay.classList.remove("opacity-100", "pointer-events-auto");
+      el.drawerOverlay.classList.add("opacity-0", "pointer-events-none");
+      el.drawerContent.classList.remove("translate-x-0");
+      el.drawerContent.classList.add("translate-x-full");
+      setTimeout(() => {
+        el.settingsDrawer.classList.add("pointer-events-none");
+      }, 280);
+    }
+
+    function escapeHtml(str) {
+      return String(str || "")
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#039;");
+    }
+
+    /* --------------------------------------------------------------------
+     * 事件监听器绑定
+     * -------------------------------------------------------------------- */
+    function setupEventListeners() {
+      // 提示词字数统计与清空
+      el.promptInput.addEventListener("input", () => {
+        el.charCount.textContent = `${el.promptInput.value.length} 字符`;
+        syncPromptAspectRatio();
+      });
+      el.clearPromptBtn.addEventListener("click", () => {
+        el.promptInput.value = "";
+        el.charCount.textContent = "0 字符";
+        syncPromptAspectRatio();
+        el.promptInput.focus();
+      });
+
+      // 模型下拉单选变更保存（记住用户主动选择的模型作为下次默认）
+      el.modelSelect.addEventListener("change", () => {
+        try {
+          localStorage.setItem(STORAGE_KEY_USER_MODEL, el.modelSelect.value);
+        } catch (e) {}
+        saveConfig();
+      });
+      el.refreshModelsBtn.addEventListener("click", fetchGatewayModels);
+
+      // 其他表单下拉变动自动存储
+      el.aspectRatioSelect.addEventListener("change", () => {
+        if (el.aspectRatioSelect.value === REF_RATIO_OPTION) {
+          useRefAspectRatio = true;
+          manualRatioOverride = Boolean(detectedPromptRatio);
+        } else if (el.aspectRatioSelect.value === PROMPT_RATIO_OPTION) {
+          useRefAspectRatio = false;
+          manualRatioOverride = false;
+        } else {
+          useRefAspectRatio = false;
+          fixedAspectRatio = el.aspectRatioSelect.value;
+          manualRatioOverride = Boolean(detectedPromptRatio);
+        }
+        syncPromptAspectRatio();
+        saveConfig();
+      });
+      [el.resolutionSelect, el.outputFormatSelect, el.backgroundSelect, el.moderationSelect, el.imageCountSelect].forEach(select => {
+        select.addEventListener("change", saveConfig);
+      });
+
+      // 参考图折叠与文件选择
+      el.toggleRefImagesBtn.addEventListener("click", () => {
+        el.refImagesContainer.classList.toggle("hidden");
+        el.refImagesChevron.classList.toggle("rotate-180");
+      });
+      el.refDropArea.addEventListener("click", () => el.refFileInput.click());
+      el.refFileInput.addEventListener("change", (e) => handleRefFiles(e.target.files));
+
+      // 拖拽上传参考图
+      el.refDropArea.addEventListener("dragover", (e) => {
+        e.preventDefault();
+        el.refDropArea.classList.add("border-black", "bg-neutral-50");
+      });
+      el.refDropArea.addEventListener("dragleave", () => {
+        el.refDropArea.classList.remove("border-black", "bg-neutral-50");
+      });
+      el.refDropArea.addEventListener("drop", (e) => {
+        e.preventDefault();
+        el.refDropArea.classList.remove("border-black", "bg-neutral-50");
+        if (e.dataTransfer.files) handleRefFiles(e.dataTransfer.files);
+      });
+
+      // 剪贴板粘贴图片
+      window.addEventListener("paste", (e) => {
+        const items = e.clipboardData?.items || [];
+        const files = [];
+        for (const item of items) {
+          if (item.type.startsWith("image/")) {
+            const f = item.getAsFile();
+            if (f) files.push(f);
+          }
+        }
+        if (files.length > 0) handleRefFiles(files);
+      });
+
+      // 生成与停止
+      el.generateBtn.addEventListener("click", startGeneration);
+      el.stopBtn.addEventListener("click", cancelGeneration);
+
+      // 生成记录翻页控制与响应式自适应两行
+      el.prevPageBtn.addEventListener("click", () => {
+        if (currentHistoryPage > 1) {
+          currentHistoryPage--;
+          renderTasksGrid();
+        }
+      });
+      el.nextPageBtn.addEventListener("click", () => {
+        const totalPages = Math.max(1, Math.ceil(taskHistory.length / getTasksPageSize()));
+        if (currentHistoryPage < totalPages) {
+          currentHistoryPage++;
+          renderTasksGrid();
+        }
+      });
+      let resizeTimer = null;
+      window.addEventListener("resize", () => {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(() => renderTasksGrid(), 120);
+      });
+
+      // 提示词详情弹窗交互
+      el.closePromptModalBtn.addEventListener("click", closePromptModal);
+      el.okPromptModalBtn.addEventListener("click", closePromptModal);
+      el.promptDetailModal.addEventListener("click", (e) => {
+        if (e.target === el.promptDetailModal) closePromptModal();
+      });
+      el.copyModalPromptBtn.addEventListener("click", () => {
+        navigator.clipboard.writeText(el.modalPromptText.textContent || "").then(() => {
+          el.copyModalPromptBtn.textContent = "已复制 ✓";
+          setTimeout(() => { el.copyModalPromptBtn.textContent = "复制提示词"; }, 1600);
+        });
+      });
+
+      // 删除确认弹窗交互
+      el.cancelDeleteBtn.addEventListener("click", closeDeleteConfirmModal);
+      el.confirmDeleteBtn.addEventListener("click", confirmDeleteTask);
+      el.deleteConfirmModal.addEventListener("click", (e) => {
+        if (e.target === el.deleteConfirmModal) closeDeleteConfirmModal();
+      });
+
+      // 日志模块操作
+      el.exportLogsBtn.addEventListener("click", exportAllLogs);
+      el.clearLogsBtn.addEventListener("click", clearAllLogs);
+
+      // Lightbox 与弹窗 ESC 关闭
+      el.closeLightboxBtn.addEventListener("click", closeLightbox);
+      el.lightboxModal.addEventListener("click", (e) => {
+        if (e.target === el.lightboxModal) closeLightbox();
+      });
+      window.addEventListener("keydown", (e) => {
+        if (e.key === "Escape") {
+          closeLightbox();
+          closePromptModal();
+          closeDeleteConfirmModal();
+          closeSettingsDrawer();
+        }
+      });
+
+      // 返回顶部按钮
+      window.addEventListener("scroll", () => {
+        if (window.scrollY > 240) {
+          el.scrollToTopBtn.classList.remove("opacity-0", "pointer-events-none");
+          el.scrollToTopBtn.classList.add("opacity-100", "pointer-events-auto");
+        } else {
+          el.scrollToTopBtn.classList.remove("opacity-100", "pointer-events-auto");
+          el.scrollToTopBtn.classList.add("opacity-0", "pointer-events-none");
+        }
+      });
+      el.scrollToTopBtn.addEventListener("click", () => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      });
+
+      // 检查更新
+      const checkUpdateBtn = document.getElementById("checkUpdateBtn");
+      if (checkUpdateBtn) {
+        checkUpdateBtn.addEventListener("click", async () => {
+          const span = checkUpdateBtn.querySelector("span");
+          const oldText = span ? span.textContent : "检查更新";
+          checkUpdateBtn.disabled = true;
+          if (span) span.textContent = "检查中...";
+          try {
+            const checkRes = await fetch(`${LOCAL_SERVICE_BASE}/api/check-update`, { cache: "no-store" });
+            const info = await checkRes.json().catch(() => ({}));
+            if (!checkRes.ok || info.error) {
+              throw new Error(info.error || ("HTTP " + checkRes.status));
+            }
+            if (!info.hasUpdate) {
+              alert(`当前已是最新版本 (${info.currentVersion})`);
+              return;
+            }
+            const ok = confirm(`发现新版本 ${info.remoteVersion}（当前 ${info.currentVersion}）
+更新说明：${info.notes || "常规优化"}
+
+是否立即下载并更新？`);
+            if (!ok) return;
+
+            if (span) span.textContent = "更新中...";
+            const applyRes = await fetch(`${LOCAL_SERVICE_BASE}/api/apply-update`, { method: "POST" });
+            const applyData = await applyRes.json().catch(() => ({}));
+            if (!applyRes.ok || !applyData.success) {
+              throw new Error(applyData.error || ("HTTP " + applyRes.status));
+            }
+            if (applyData.restarted) {
+              alert(`已更新到 ${applyData.version}，本地服务正在自动重启，2 秒后自动刷新页面。`);
+              setTimeout(() => location.reload(), 2000);
+            } else {
+              alert(`已更新到 ${applyData.version}，即将刷新页面。`);
+              location.reload();
+            }
+          } catch (err) {
+            alert("检查/更新失败：" + (err.message || "请确认已通过 AI生图工作台.exe 启动"));
+          } finally {
+            checkUpdateBtn.disabled = false;
+            if (span) span.textContent = oldText;
+          }
+        });
+      }
+
+      // 设置抽屉
+      el.openSettingsBtn.addEventListener("click", openSettingsDrawer);
+      el.closeSettingsBtn.addEventListener("click", closeSettingsDrawer);
+      el.drawerOverlay.addEventListener("click", closeSettingsDrawer);
+      el.testConnBtn.addEventListener("click", testGatewayConnection);
+      // API Key 填写或粘贴后自动即时保存，无需非点保存按钮
+      let apiKeySaveTimer = null;
+      el.cfgApiKey.addEventListener("input", () => {
+        clearTimeout(apiKeySaveTimer);
+        apiKeySaveTimer = setTimeout(() => saveConfig(), 300);
+      });
+      el.cfgApiKey.addEventListener("change", () => saveConfig());
+
+      // 切换 API Key 密码可见性
+      el.toggleApiKeyVisibility.addEventListener("click", () => {
+        const isPwd = el.cfgApiKey.type === "password";
+        el.cfgApiKey.type = isPwd ? "text" : "password";
+        el.eyeIcon.innerHTML = isPwd
+          ? `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.875 18.825A10.05 10.05 0 0112 19c-4.478 0-8.268-2.943-9.543-7a9.97 9.97 0 011.563-3.029m5.858.908a3 3 0 114.243 4.243M9.878 9.878l4.242 4.242M9.88 9.88l-3.29-3.29m7.532 7.532l3.29 3.29M3 3l18 18"></path>`
+          : `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path>`;
+      });
+
+      el.saveDrawerSettingsBtn.addEventListener("click", () => {
+        saveConfig();
+        closeSettingsDrawer();
+      });
+
+      el.resetSettingsBtn.addEventListener("click", () => {
+        if (confirm("确定要恢复默认设置吗？")) {
+          try {
+            localStorage.removeItem(STORAGE_KEY_USER_MODEL);
+          } catch (e) {}
+          appConfig = { ...DEFAULT_CONFIG };
+          applyConfigToUI();
+          saveConfig();
+        }
+      });
+    }
+
+    /* --------------------------------------------------------------------
+     * 流动光感极细微方块点阵 Canvas 动效 (点阵尺寸缩小，柔美微光流动)
+     * -------------------------------------------------------------------- */
+    let textureCanvas = null;
+
+    function startTextureAnimation() {
+      textureCanvas = document.getElementById("textureCanvas");
+      if (textureCanvas) createTextureAnimation(textureCanvas, el.canvasContainer, false);
+    }
+
+    // 空画布和每个生成中的任务共用原来的流动点阵算法，各自管理动画生命周期。
+    function createTextureAnimation(canvas, container, generating) {
+      const ctx = canvas.getContext("2d");
+      if (!ctx) return () => {};
+      let width = 0, height = 0, frameId = 0, stopped = false;
+      let mouseX = -1000, mouseY = -1000;
+      const startTime = performance.now();
+      function resize() {
+        const rect = container.getBoundingClientRect();
+        const dpr = Math.min(window.devicePixelRatio || 1, 2);
+        width = rect.width;
+        height = rect.height;
+        canvas.width = Math.round(width * dpr);
+        canvas.height = Math.round(height * dpr);
+        ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      }
+      function move(event) {
+        const rect = container.getBoundingClientRect();
+        mouseX = event.clientX - rect.left;
+        mouseY = event.clientY - rect.top;
+      }
+      function leave() { mouseX = -1000; mouseY = -1000; }
+      container.addEventListener("mousemove", move);
+      container.addEventListener("mouseleave", leave);
+      const observer = window.ResizeObserver ? new ResizeObserver(resize) : null;
+      observer?.observe(container);
+      window.addEventListener("resize", resize);
+      resize();
+      function draw(now) {
+        if (stopped) return;
+        if (canvas.style.display !== "none") {
+          if (Math.abs(container.clientWidth - width) > 1 || Math.abs(container.clientHeight - height) > 1) resize();
+          ctx.clearRect(0, 0, width, height);
+          const time = (now - startTime) * 0.001;
+          const speed = generating ? 2.6 : 1.0;
+          const cx = width / 2, cy = height / 2;
+          const cellSize = 11;
+          const cols = Math.ceil(width / cellSize) + 1;
+          const rows = Math.ceil(height / cellSize) + 1;
+          for (let c = 0; c < cols; c++) {
+            for (let r = 0; r < rows; r++) {
+              const x = c * cellSize, y = r * cellSize;
+              const distCenter = Math.hypot(x - cx, y - cy);
+              const distMouse = Math.hypot(x - mouseX, y - mouseY);
+              const waveA = Math.sin(x * 0.018 + y * 0.012 - time * speed) * 0.5 + 0.5;
+              const waveB = Math.sin(distCenter * 0.025 - time * speed * 1.5) * 0.5 + 0.5;
+              let flow = waveA * 0.45 + waveB * 0.55;
+              if (distMouse < 110) flow = Math.min(1, flow + (1 - distMouse / 110) * 0.55);
+              const size = 0.6 + flow * 1.6;
+              const alpha = 0.03 + flow * 0.16;
+              const half = size / 2;
+              ctx.fillStyle = generating
+                ? 'rgba(30, 41, 59, ' + Math.min(1, alpha * 1.5) + ')'
+                : 'rgba(100, 116, 139, ' + alpha + ')';
+              ctx.beginPath();
+              if (ctx.roundRect) ctx.roundRect(x - half, y - half, size, size, Math.min(0.8, size * 0.25));
+              else ctx.rect(x - half, y - half, size, size);
+              ctx.fill();
+            }
+          }
+        }
+        frameId = requestAnimationFrame(draw);
+      }
+      frameId = requestAnimationFrame(draw);
+      return () => {
+        stopped = true;
+        cancelAnimationFrame(frameId);
+        observer?.disconnect();
+        window.removeEventListener("resize", resize);
+        container.removeEventListener("mousemove", move);
+        container.removeEventListener("mouseleave", leave);
+      };
+    }
+
+    /* --------------------------------------------------------------------
+     * 应用启动初始化
+     * -------------------------------------------------------------------- */
+    (async () => {
+      loadSavedConfig();
+      setupEventListeners();
+      loadSavedTasks();
+      loadSavedLogs();
+      startTextureAnimation();
+
+      // 从本地服务恢复兜底配置与扫描 outputs 文件夹中的已有图片
+      await Promise.all([
+        syncConfigFromLocalServer(),
+        syncOutputsFromLocalServer()
+      ]);
+
+      // 如果有 API Key 则静默后台拉取可用模型
+      if (appConfig.apiKey) {
+        fetchGatewayModels().catch(() => {});
+      }
+
+      // 静默检查更新（启动后 5 秒查一次，之后每 1 小时静默检查一次，有新版时提示）
+      let notifiedRemoteVersion = "";
+      async function silentCheckForUpdate() {
+        try {
+          const checkRes = await fetch(`${LOCAL_SERVICE_BASE}/api/check-update`, { cache: "no-store" });
+          if (!checkRes.ok) return;
+          const info = await checkRes.json().catch(() => null);
+          if (!info || !info.hasUpdate || !info.remoteVersion) return;
+
+          const btn = document.getElementById("checkUpdateBtn");
+          if (btn) {
+            const span = btn.querySelector("span");
+            if (span) span.textContent = `发现新版 (${info.remoteVersion})`;
+            btn.classList.add("border-emerald-500", "text-emerald-700", "bg-emerald-50");
+          }
+          if (notifiedRemoteVersion !== info.remoteVersion) {
+            notifiedRemoteVersion = info.remoteVersion;
+            const ok = confirm(`检测到新版本 ${info.remoteVersion}（当前 ${info.currentVersion}）\n更新说明：${info.notes || "常规优化"}\n\n是否立即更新？`);
+            if (ok && btn) btn.click();
+          }
+        } catch (e) {}
+      }
+      setTimeout(silentCheckForUpdate, 5000);
+      setInterval(silentCheckForUpdate, 60 * 60 * 1000);
+    })();
+  </script>
+</body>
+
+</html>
