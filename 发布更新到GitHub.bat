@@ -21,24 +21,7 @@ set "PUBLISH_MSG=%MSG%"
 
 echo.
 echo [1/4] 正在更新本地版本号 (version.json 与 HTML)...
-powershell -NoProfile -ExecutionPolicy Bypass -Command ^
-  "$ErrorActionPreference = 'Stop'; " ^
-  "$msg = $env:PUBLISH_MSG; if (-not $msg) { $msg = '常规更新' }; " ^
-  "$vPath = Join-Path $PWD 'version.json'; " ^
-  "$v = Get-Content $vPath -Raw -Encoding UTF8 | ConvertFrom-Json; " ^
-  "if ($v.version -match '^(MY)(\d+)\.(\d+)\.(\d+)$') { " ^
-  "  $v.version = $Matches[1] + $Matches[2] + '.' + $Matches[3] + '.' + ([int]$Matches[4] + 1); " ^
-  "} " ^
-  "$v.updatedAt = (Get-Date -Format 'yyyy-MM-dd'); " ^
-  "$v.notes = $msg; " ^
-  "$utf8NoBom = New-Object System.Text.UTF8Encoding($false); " ^
-  "[System.IO.File]::WriteAllText($vPath, ($v | ConvertTo-Json -Depth 4), $utf8NoBom); " ^
-  "$htmlPath = Join-Path $PWD 'AI生图工作台.html'; " ^
-  "$html = [System.IO.File]::ReadAllText($htmlPath, $utf8NoBom); " ^
-  "$html = [regex]::Replace($html, '(<span id=\"appVersionBadge\"[^>]*>\s*)MY\d+\.\d+\.\d+(\s*</span>)', ('${1}' + $v.version + '${2}')); " ^
-  "[System.IO.File]::WriteAllText($htmlPath, $html, $utf8NoBom); " ^
-  "Write-Host ('      已升级版本号为: ' + $v.version)"
-
+powershell -NoProfile -ExecutionPolicy Bypass -Command "$ErrorActionPreference='Stop'; $msg=$env:PUBLISH_MSG; if(-not $msg){$msg='常规更新'}; $vPath=Join-Path $PWD 'version.json'; $v=Get-Content $vPath -Raw -Encoding UTF8 | ConvertFrom-Json; if($v.version -match '^(MY)(\d+)\.(\d+)\.(\d+)$'){$v.version=$Matches[1]+$Matches[2]+'.'+$Matches[3]+'.'+([int]$Matches[4]+1)}; $v.updatedAt=(Get-Date -Format 'yyyy-MM-dd'); $v.notes=$msg; $utf8NoBom=New-Object System.Text.UTF8Encoding($false); [System.IO.File]::WriteAllText($vPath,($v|ConvertTo-Json -Depth 4),$utf8NoBom); $htmlPath=Join-Path $PWD 'AI生图工作台.html'; $html=[System.IO.File]::ReadAllText($htmlPath,$utf8NoBom); $html=[regex]::Replace($html,'(<span id=\"appVersionBadge\"[^>]*>\s*)MY\d+\.\d+\.\d+(\s*</span>)',('${1}'+$v.version+'${2}')); [System.IO.File]::WriteAllText($htmlPath,$html,$utf8NoBom); Write-Host ('      已升级版本号为: '+$v.version)"
 if errorlevel 1 (
     echo [失败] 更新版本号失败，请检查文件是否被占用。
     goto KEEP_OPEN
@@ -50,9 +33,6 @@ echo.
 echo [2/4] 正在提交改动到本地 Git...
 git add -A
 git commit -m "%MSG%"
-if errorlevel 1 (
-    echo [提示] 本地没有检测到新的改动或提交未完成，继续校验远端状态...
-)
 
 echo.
 echo [3/4] 正在推送到 GitHub (main 分支)...
