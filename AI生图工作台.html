@@ -1807,7 +1807,9 @@ ${JSON.stringify(cleanItem.payload, null, 2)}
       const isGemini = /gemini/i.test(task.model);
       const isApimart = /apimart|apib/i.test(apiUrl);
 
-      function buildRequestSpec(nCount) {
+      const canUseAsyncTask = /selleraim/i.test(apiUrl) && (!task.background || task.background === "auto");
+
+      function buildRequestSpec(nCount, useAsync = canUseAsyncTask) {
         const logPayload = {
           model: task.model,
           prompt: task.prompt,
@@ -1815,6 +1817,10 @@ ${JSON.stringify(cleanItem.payload, null, 2)}
           response_format: "url",
           ...sizeConfig
         };
+        if (useAsync) {
+          // 按 SellerAim 规范开启异步任务模式，避免 40-120s 慢图请求因长连接空闲被中间网络掐断 (499)
+          logPayload.background = true;
+        }
         if (!isXaiGrok && !isGemini) {
           if (task.outputFormat) logPayload.output_format = task.outputFormat;
           if (task.moderation) logPayload.moderation = task.moderation;
@@ -1833,6 +1839,8 @@ ${JSON.stringify(cleanItem.payload, null, 2)}
 
         if (!useMultipartEdits) {
           return {
+            nCount,
+            useAsync,
             logPayload,
             headers: {
               Authorization: `Bearer ${apiKey}`,
@@ -1851,6 +1859,9 @@ ${JSON.stringify(cleanItem.payload, null, 2)}
         formData.append("response_format", "url");
         if (sizeConfig.size) formData.append("size", sizeConfig.size);
         if (isApimart && sizeConfig.resolution) formData.append("resolution", sizeConfig.resolution);
+        if (useAsync) {
+          formData.append("background", "true");
+        }
         if (!isXaiGrok && !isGemini) {
           if (task.outputFormat) formData.append("output_format", task.outputFormat);
           if (task.moderation) formData.append("moderation", task.moderation);
@@ -1865,6 +1876,8 @@ ${JSON.stringify(cleanItem.payload, null, 2)}
         });
 
         return {
+          nCount,
+          useAsync,
           logPayload,
           headers: {
             Authorization: `Bearer ${apiKey}`,
@@ -1898,6 +1911,10 @@ ${JSON.stringify(cleanItem.payload, null, 2)}
 
         if (!response.ok) {
           const errorMsg = resData?.error?.message || resData?.message || `HTTP ${response.status} ${response.statusText}`;
+          // 若当前模型/通道不支持 background=true 异步参数并返回 400，则立即去掉 background 回退为同步请求一次
+          if (spec.useAsync && response.status === 400 && /background/i.test(errorMsg)) {
+            return sendSingleReq(buildRequestSpec(spec.nCount, false));
+          }
           const err = new Error(errorMsg);
           err.endpoint = endpoint;
           err.requestPayload = spec.logPayload;
@@ -1958,15 +1975,21 @@ ${JSON.stringify(cleanItem.payload, null, 2)}
       };
     }
 
-    async function pollTaskResult(apiUrl, apiKey, taskId, pollUrl, signal) {
-      let endpoint;
+    function resolvePollEndpoint(apiUrl, taskId, pollUrl) {
       if (pollUrl) {
-        endpoint = pollUrl.startsWith("http") ? pollUrl : `${apiUrl}${pollUrl.startsWith("/") ? "" : "/"}${pollUrl}`;
-      } else {
-        endpoint = `${apiUrl}/images/generations/${taskId}`;
+        if (/^https?:\/\//i.test(pollUrl)) return pollUrl;
+        if (/^\/v\d+\//i.test(pollUrl)) {
+          return new URL(apiUrl).origin + pollUrl;
+        }
+        return `${apiUrl}${pollUrl.startsWith("/") ? "" : "/"}${pollUrl}`;
       }
+      return `${apiUrl}/images/tasks/${taskId}`;
+    }
 
-      const maxWaitMs = 180000;
+    async function pollTaskResult(apiUrl, apiKey, taskId, pollUrl, signal) {
+      const endpoint = resolvePollEndpoint(apiUrl, taskId, pollUrl);
+
+      const maxWaitMs = 300000;
       const startTime = Date.now();
       const intervalMs = 2500;
 
@@ -1994,7 +2017,7 @@ ${JSON.stringify(cleanItem.payload, null, 2)}
         if (["completed", "success", "succeeded"].includes(status)) {
           const result = data.result || data;
           if (Array.isArray(result?.data)) {
-            return result.data.map(item => item.url || item.b64_json).filter(Boolean);
+            return result.data.map(item => item.url || (item.b64_json ? (item.b64_json.startsWith("data:") ? item.b64_json : `data:image/png;base64,${item.b64_json}`) : null)).filter(Boolean);
           }
           if (Array.isArray(result?.images)) {
             return result.images;
@@ -2002,12 +2025,12 @@ ${JSON.stringify(cleanItem.payload, null, 2)}
           if (result?.url) return [result.url];
         }
 
-        if (["failed", "failure", "error"].includes(status)) {
+        if (["failed", "failure", "error", "cancelled", "canceled"].includes(status)) {
           throw new Error(data.error?.message || data.fail_reason || "图像生成失败");
         }
       }
 
-      throw new Error("生成任务轮询超时（超过3分钟）");
+      throw new Error("生成任务轮询超时（超过5分钟）");
     }
 
     function cancelGeneration(taskId) {
