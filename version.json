@@ -1,8 +1,8 @@
 {
-    "version":  "MY1.0.11",
-    "exeVersion":  "1.0.8",
-    "updatedAt":  "2026-11-17",
-    "notes":  "常规更新",
+    "version":  "MY1.0.12",
+    "exeVersion":  "1.0.9",
+    "updatedAt":  "2026-11-24",
+    "notes":  "一键打开生图文件夹",
     "htmlFile":  "AI生图工作台.html",
     "exeFile":  "AI生图工作台.exe"
 }

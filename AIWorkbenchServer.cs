@@ -255,6 +255,12 @@ class AIWorkbenchServer
                 return;
             }
 
+            if (pathUrl == "/api/open-outputs" && req.HttpMethod == "POST")
+            {
+                HandleOpenOutputs(req, res);
+                return;
+            }
+
             if (pathUrl == "/api/save-image" && req.HttpMethod == "POST")
             {
                 HandleSaveImage(req, res);
@@ -342,6 +348,52 @@ class AIWorkbenchServer
             }
 
             WriteJson(res, 200, "{\"success\":true,\"filename\":\"" + EscapeJson(filename) + "\",\"fullPath\":\"" + EscapeJson(filePath) + "\"}");
+        }
+        catch (Exception ex)
+        {
+            WriteJson(res, 500, "{\"error\":\"" + EscapeJson(ex.Message) + "\"}");
+        }
+    }
+
+    static void HandleOpenOutputs(HttpListenerRequest req, HttpListenerResponse res)
+    {
+        try
+        {
+            string body = "";
+            if (req.HasEntityBody)
+            {
+                using (StreamReader reader = new StreamReader(req.InputStream, Encoding.UTF8))
+                {
+                    body = reader.ReadToEnd();
+                }
+            }
+            string filename = ExtractJsonField(body, "filename");
+            Directory.CreateDirectory(OUTPUTS_DIR);
+
+            string targetFile = "";
+            if (!string.IsNullOrEmpty(filename))
+            {
+                string safeName = Path.GetFileName(filename);
+                string candidate = Path.Combine(OUTPUTS_DIR, safeName);
+                if (File.Exists(candidate))
+                {
+                    targetFile = candidate;
+                }
+            }
+
+            if (!string.IsNullOrEmpty(targetFile))
+            {
+                Process.Start(new ProcessStartInfo("explorer.exe", "/select,\"" + targetFile + "\"")
+                {
+                    UseShellExecute = true
+                });
+            }
+            else
+            {
+                Process.Start(new ProcessStartInfo(OUTPUTS_DIR) { UseShellExecute = true });
+            }
+
+            WriteJson(res, 200, "{\"success\":true,\"outputsDir\":\"" + EscapeJson(OUTPUTS_DIR) + "\"}");
         }
         catch (Exception ex)
         {

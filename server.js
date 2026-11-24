@@ -45,6 +45,34 @@ const server = http.createServer(async (req, res) => {
     return;
   }
 
+  // 打开 outputs 文件夹并定位到指定图片
+  if (reqUrl.pathname === "/api/open-outputs" && req.method === "POST") {
+    const chunks = [];
+    req.on("data", chunk => chunks.push(chunk));
+    req.on("end", () => {
+      try {
+        const rawBody = Buffer.concat(chunks).toString("utf-8").trim() || "{}";
+        let filename = "";
+        try { filename = JSON.parse(rawBody).filename || ""; } catch (e) {}
+        fs.mkdirSync(OUTPUTS_DIR, { recursive: true });
+        const safeName = filename ? path.basename(filename) : "";
+        const targetFile = safeName ? path.join(OUTPUTS_DIR, safeName) : "";
+        const { spawn } = require("child_process");
+        if (targetFile && fs.existsSync(targetFile)) {
+          spawn("explorer.exe", [`/select,${targetFile}`], { detached: true, stdio: "ignore" }).unref();
+        } else {
+          spawn("explorer.exe", [OUTPUTS_DIR], { detached: true, stdio: "ignore" }).unref();
+        }
+        res.writeHead(200, { "Content-Type": "application/json; charset=utf-8" });
+        res.end(JSON.stringify({ success: true, outputsDir: OUTPUTS_DIR }));
+      } catch (err) {
+        res.writeHead(500, { "Content-Type": "application/json; charset=utf-8" });
+        res.end(JSON.stringify({ error: err.message }));
+      }
+    });
+    return;
+  }
+
   // 本地直连网关代理（绕过浏览器/系统代理超时与干扰）
   if (reqUrl.pathname === "/api/proxy") {
     const targetUrl = req.headers["x-target-url"] || reqUrl.searchParams.get("url") || "";

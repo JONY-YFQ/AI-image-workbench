@@ -97,7 +97,7 @@
         <img src="favicon.png" alt="Logo" class="w-7 h-7 rounded-lg object-contain shadow-sm select-none" />
         <span class="font-semibold text-base tracking-tight text-neutral-900">AI 图像工作台</span>
         <span id="appVersionBadge" class="hidden sm:inline-flex items-center px-2 py-0.5 rounded text-[11px] font-mono font-medium bg-neutral-100 text-neutral-600 border border-neutral-200">
-          MY1.0.11
+          MY1.0.12
         </span>
       </div>
 
@@ -2061,6 +2061,22 @@ ${JSON.stringify(cleanItem.payload, null, 2)}
       renderTaskPreviews();
     }
 
+    async function openTaskFolder(task) {
+      if (task.saveStatus === "error") {
+        const ok = await saveTaskImages(task);
+        if (!ok) return;
+      }
+      const filename = (Array.isArray(task.localFiles) && task.localFiles[0]) || "";
+      try {
+        const res = await requestLocalService("/api/open-outputs", { payload: { filename }, timeout: 5000 });
+        if (!res.ok || !res.data?.success) {
+          throw new Error(res.data?.error || ("HTTP " + res.status));
+        }
+      } catch (err) {
+        alert("无法打开本地文件夹：" + (err.message || "请确认已通过最新版 AI生图工作台.exe 启动"));
+      }
+    }
+
     function getTaskPreviewRatio(task) {
       const ratio = String(task.aspectRatio || "1:1").split(":").map(Number);
       return ratio.length === 2 && ratio.every(n => Number.isFinite(n) && n > 0)
@@ -2094,7 +2110,7 @@ ${JSON.stringify(cleanItem.payload, null, 2)}
           actions.className = "task-preview-actions";
           const icons = {
             "提示词": '<path d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.6L19 9v10a2 2 0 01-2 2z"/>',
-            "保存图片": '<path d="M12 3v12m-4-4l4 4 4-4M5 17v4h14v-4"/>',
+            "打开所在文件夹": '<path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/>',
             "停止此任务": '<rect x="6" y="6" width="12" height="12" rx="1"/>'
           };
           const action = (label, handler) => {
@@ -2108,7 +2124,7 @@ ${JSON.stringify(cleanItem.payload, null, 2)}
             return button;
           };
           action("提示词", () => openPromptModal(task));
-          const download = action("保存图片", () => { saveTaskImages(task); });
+          const download = action("打开所在文件夹", () => { openTaskFolder(task); });
           const stop = action("停止此任务", () => cancelGeneration(task.id));
           card.addEventListener("click", () => {
             currentActiveTask = task;
@@ -2129,8 +2145,8 @@ ${JSON.stringify(cleanItem.payload, null, 2)}
         parts.stop.disabled = runningTasks.get(task.id)?.signal.aborted || false;
         parts.download.hidden = task.status !== "success";
         parts.download.disabled = task.saveStatus === "saving";
-        parts.download.title = task.saveStatus === "error" ? "保存失败，点击重试：" + task.saveError
-          : task.saveStatus === "saving" ? "正在保存到 outputs" : "保存到本项目 outputs 文件夹";
+        parts.download.title = task.saveStatus === "error" ? "保存失败，点击重试并打开文件夹：" + task.saveError
+          : task.saveStatus === "saving" ? "正在保存到 outputs" : "打开存放此图的文件夹 (outputs)";
         parts.download.style.backgroundColor = task.saveStatus === "error" ? "#dc2626" : "";
         // 只更新状态发生变化的卡片，其他任务的图片和预览位置保持稳定。
         if (parts.renderedStatus === task.status) return;
